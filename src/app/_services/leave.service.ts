@@ -26,7 +26,7 @@ export class LeaveService {
       return this.http.get<Leave[]>(`${this.baseURL}/listLeaves`);
     }
 
-    updateLeave(leave: Leave): Observable<Object> {
+    updateLeave(leave: Leave) {
       return this.http.put(`${this.baseURL}/updateLeave`, leave, {responseType: 'text'});
     }
     

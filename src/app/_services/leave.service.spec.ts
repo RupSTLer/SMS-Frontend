@@ -37,6 +37,7 @@ describe('LeaveService', () => {
         endDate: "2023-05-31",
         status: "pending",
         reason: "sick",
+        time: "30-05-2023 20:29",
       };
 
       (http.post as jest.Mock).mockReturnValueOnce(of('Leave Applied'));  //mocking
@@ -61,13 +62,14 @@ describe('LeaveService', () => {
         endDate: "2023-05-31",
         status: "pending",
         reason: "sick",
+        time: "30-05-2023 20:29",
       };
 
-      (http.put as jest.Mock).mockReturnValueOnce(Promise.resolve({}));  //mocking
+      (http.put as jest.Mock).mockReturnValueOnce(of('Leave updated'));  //mocking
 
-      const updateLeavePromise = leaveService.updateLeave(updateMockData);
-      expect(http.put).toHaveBeenCalledWith(`${leaveService.baseURL}/updateLeave`, updateMockData);
-      await expect(updateLeavePromise).resolves.toEqual({});
+      const updateLeavePromise = leaveService.updateLeave(updateMockData).toPromise();
+      expect(http.put).toHaveBeenCalledWith(`${leaveService.baseURL}/updateLeave`, updateMockData, {responseType: 'text'});
+      await expect(updateLeavePromise).resolves.toEqual(('Leave updated'));
 
     });
   });
@@ -83,6 +85,7 @@ describe('LeaveService', () => {
         endDate: "2023-05-31",
         status: "pending",
         reason: "sick",
+        time: "30-05-2023 20:29",
       },
       {
         id: 4,
@@ -92,6 +95,7 @@ describe('LeaveService', () => {
         endDate: "2023-06-08",
         status: "approved",
         reason: "marraige",
+        time: "30-05-2023 20:29",
       }];
 
       (http.get as jest.Mock).mockReturnValueOnce(of(leaveListMockData));
@@ -115,12 +119,13 @@ describe('LeaveService', () => {
         endDate: "2023-06-08",
         status: "approved",
         reason: "marraige",
+        time: "30-05-2023 20:29",
       };
 
       (http.get as jest.Mock).mockReturnValueOnce(Promise.resolve(getLeavesData));
 
-      const getLeavePromise = leaveService.getLeaveDetails(stuId);
-      expect(http.get).toHaveBeenCalledWith(`${leaveService.baseURL}/getLeaveDetails/${stuId}`);
+      const getLeavePromise = leaveService.getLeaveDetailsByStudentId(stuId);
+      expect(http.get).toHaveBeenCalledWith(`${leaveService.baseURL}/getLeaveDetailsByStudentId/${stuId}`);
       expect(getLeavePromise).resolves.toEqual(getLeavesData);
 
     });
