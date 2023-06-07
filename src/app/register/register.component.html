@@ -1,7 +1,8 @@
 <body>
     <div class="container">
         <h2 class="form-title">REGISTER NEW USER</h2>
-        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+        <!-- #registerForm="ngForm" (ngSubmit)="register(registerForm)" -->
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
             <div class="main-user-info">
 
                 <div class="user-input-box">
@@ -119,7 +120,7 @@
             </div>
 
             <div class="form-submit-btn">
-                <input type="submit" value="Register" mat-raised-button color="primary" [disabled]="addForm.invalid">
+                <input type="submit" value="Register" mat-raised-button color="primary" [disabled]="registerForm.invalid">
             </div>
 
         </form>

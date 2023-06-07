@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UpdateStudentComponent } from './update-student.component';
 import { StudentService } from '../../_services/student.service';
-import { of } from 'rxjs';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -40,33 +39,28 @@ describe('UpdateStudentComponent', () => {
   
   it('should call updateStudent method with valid inputs', () => {
 
-    const studentServiceSpy = jest.spyOn(studentService, 'updateStudent').mockReturnValue(of({success: true}));
+    const studentServiceSpy = jest.spyOn(studentService, 'updateStudent');
     //set valid inputs
+    const stuId = "SMS003";
+    const updateMockData = {
+      studentId: stuId,
+      userName:"ralph123",
+      password:"rup@pass",
+      name:"Ralph Del",
+      age: 14,
+      birthDate: "2010-12-08",
+      gender: "Male",
+      address: "Howrah",
+      phoneNo: "6345617893",
+      email:"ralph@g.co",
+      classe: "seven",
+      section: "A",
+    };
 
-    const testStudentId = 'SMS002';
-    // const testUpdateDetails = { name: 'Rupam Del', email: 'rup@g.co'};
-    // component.student.id = 3;
-    component.student.studentId = testStudentId;
-    component.student.userName = "rup123";
-    component.student.password = 'Rup@pass';
-    component.student.name = 'Rupam Chakraborty';
-    component.student.email = 'rup@gm.co';
+    const mockService = studentService.updateStudent(stuId, updateMockData).toPromise();
 
-
-    //trigger the function call
-    component.updateStudent();
-
-    //expect the addStudent method to be called with the expected parameters
-    expect(studentServiceSpy).toHaveBeenCalledWith({
-      // id: 3,
-      studentId: 'SMS002',
-      userName: 'rup123',
-      password: 'Rup@pass',
-      name: 'Rupam Chakraborty',
-      email: 'rup@gm.co'
-    });
-
-    // expect(studentServiceSpy.addStudent).toHaveBeenCalledTimes(1);
+    // expect(studentServiceSpy).toHaveBeenCalledWith(updateMockData);
+    expect(mockService).resolves.toEqual('details updated');
 
   });
 

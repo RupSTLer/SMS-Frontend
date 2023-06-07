@@ -4,11 +4,10 @@ import { Router } from '@angular/router';
 import { LeaveService } from '../../_services/leave.service';
 import { NotificationService } from '../../_services/notification.service';
 import { Leave } from '../../entities/leave';
-import { StudentService } from 'src/app/_services/student.service';
-import { Student } from 'src/app/entities/student';
-import { UserService } from 'src/app/_services/user.service';
-import { UserDetails } from 'src/app/entities/userDetails';
-import { User } from 'src/app/entities/user';
+import { Student } from '../../entities/student';
+import { UserService } from '../../_services/user.service';
+import { UserDetails } from '../../entities/userDetails';
+import { User } from '../../entities/user';
 
 @Component({
   selector: 'app-apply-leave',
@@ -24,6 +23,7 @@ export class ApplyLeaveComponent implements OnInit {
   username: string;
   userDetails: UserDetails = new UserDetails();
   allDetails: User = new User();
+  length: number;
 
   constructor(private fb: FormBuilder,
     private leaveService: LeaveService,
@@ -70,10 +70,10 @@ export class ApplyLeaveComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    // console.log(this.leave); //returns the leave object created
-    this.applyLeave();
-  }
+  // onSubmit() {
+  //   // console.log(this.leave); //returns the leave object created
+  //   this.applyLeave();
+  // }
 
   getUserDetails()
   {
@@ -101,7 +101,6 @@ export class ApplyLeaveComponent implements OnInit {
         this.leaveForm.patchValue({
           studentName: this.allDetails.name || '',
           studentId: this.allDetails.userID || ''
-
         });
 
       }

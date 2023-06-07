@@ -3,43 +3,33 @@ import { HeaderComponent } from './header.component';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { NotificationService } from '../_services/notification.service';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../_services/user.service';
+import { UserAuthService } from '../_services/user-auth.service';
+import { TimerService } from '../_services/timer.service';
+import { ToastrModule } from 'ngx-toastr';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
 
-describe('AppComponent', () => {
+
+// jest.mock('./userAuthService');
+// jest.mock('@angular/router');
+
+describe('ApplyLeaveComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  let service: NotificationService;
-  // let service1: ToastrService;
-  // let service2: UserService;
-  // let http: HttpClient;
-  let httpMock: HttpTestingController;
+  let userAuthService: UserAuthService;
 
   beforeEach(async () => {
+    userAuthService = new UserAuthService();
     await TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule   ,
-        ToastrModule.forRoot(),
-      ],
-      declarations: [
-        HeaderComponent
-      ],
-      providers: [ NotificationService,
-      MatSnackBar]
-    }).compileComponents();
-    service=TestBed.inject(NotificationService);
-    // service1=TestBed.inject(ToastrService);
-    // service2=TestBed.inject(UserService);
-    // httpMock=TestBed.get(HttpTestingController);
-    // http=TestBed.inject(HttpClient);
-  });
+      declarations: [ HeaderComponent ],
+      imports: [HttpClientTestingModule, ToastrModule.forRoot()],
+      providers: [MatSnackBar, NotificationService]
+    })
+    .compileComponents();
 
-  it('service', () => {
-    expect(service).toBeTruthy();
-  });
-
-  it('three plus two', () => {
-    expect(3+2).toBe(5);
+    fixture = TestBed.createComponent(HeaderComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
@@ -53,5 +43,6 @@ describe('AppComponent', () => {
     const header = fixture.componentInstance;
     expect(header.title).toEqual('headerapp');
   });
+
 
 });

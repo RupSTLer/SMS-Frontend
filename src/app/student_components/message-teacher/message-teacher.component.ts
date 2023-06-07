@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MessageService } from 'src/app/_services/message.service';
-import { NotificationService } from 'src/app/_services/notification.service';
-import { StudentService } from 'src/app/_services/student.service';
-import { TeacherService } from 'src/app/_services/teacher.service';
-import { UserAuthService } from 'src/app/_services/user-auth.service';
-import { UserService } from 'src/app/_services/user.service';
-import { Message } from 'src/app/entities/message';
-import { Teacher } from 'src/app/entities/teacher';
-import { User } from 'src/app/entities/user';
-import { UserDetails } from 'src/app/entities/userDetails';
+import { MessageService } from '../../_services/message.service';
+import { NotificationService } from '../../_services/notification.service';
+import { TeacherService } from '../../_services/teacher.service';
+import { UserService } from '../../_services/user.service';
+import { Message } from '../../entities/message';
+import { Teacher } from '../../entities/teacher';
+import { User } from '../../entities/user';
+import { UserDetails } from '../../entities/userDetails';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-message-teacher',
@@ -34,13 +32,10 @@ export class MessageTeacherComponent implements OnInit{
     private formBuilder: FormBuilder,
     private teacherService: TeacherService,
     private router: Router,
-    private userAuthService: UserAuthService,
     private userService: UserService,
-    private route: ActivatedRoute,
-    private studentservice: StudentService,
     private messageSer: MessageService,
     private notify: NotificationService,
-    private activeR: ActivatedRoute) { }
+    ) { }
 
   ngOnInit(): void {
     this.getUserDetails();
@@ -64,25 +59,6 @@ export class MessageTeacherComponent implements OnInit{
       this.teachers = data;
    });
 
-
-    // this.teacherService.getTeacherById(this.id).subscribe(data => {
-    //   this.teachers = data;
-    // });
-
-    //    this.teachers = [{
-    //   "id": 1,
-    //   "userName":"rup",
-    //   "password":"",
-    //   "name":"Ralph Del",
-    //   "email":"ralph@g.co"
-    // },
-    // {
-    //   "id": 2,
-    //   "userName":"rit",
-    //   "password":"",
-    //   "name":"Ritam Del",
-    //   "email":"rit@g.co"
-    // }];
   }
 
   addMsg()
@@ -120,7 +96,7 @@ export class MessageTeacherComponent implements OnInit{
         // console.log(this.allDetails);
         // console.log(this.allDetails.email);
         // console.log(this.allDetails.userID);
-        localStorage.setItem('userID', this.allDetails.userID);
+        // localStorage.setItem('userID', this.allDetails.userID);
         // this.addMsg(this.allDetails.userID);
       }
     );

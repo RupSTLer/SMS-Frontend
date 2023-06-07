@@ -3,7 +3,7 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotificationService } from '../../_services/notification.service';
 import { ToastrModule } from 'ngx-toastr';
-import { of, throwError } from 'rxjs';
+import { of} from 'rxjs';
 import { ListLeavesComponent } from './list-leaves.component';
 import { LeaveService } from '../../_services/leave.service';
 
@@ -33,7 +33,7 @@ describe('ListLeavesComponent', () => {
 
   it('should fetch the mocked leaves list using listLeaves method', () => {
     //mocking the leave service method
-    const feeServiceSpy = jest
+    const leaveServiceSpy = jest
       .spyOn(leaveService, 'listLeaves')
       .mockReturnValue(of([
         {
@@ -43,7 +43,8 @@ describe('ListLeavesComponent', () => {
           startDate: "2023-05-30",
           endDate: "2023-05-30",
           status: "pending",
-          reason: "event"
+          reason: "event",
+          time: "30-05-2023 20:29",
         },
 
         {
@@ -53,7 +54,8 @@ describe('ListLeavesComponent', () => {
           startDate: "2023-05-30",
           endDate: "2023-06-02",
           status: "pending",
-          reason: "sick"
+          reason: "sick",
+          time: "30-05-2023 20:29",
         }
       ]));
 
@@ -61,7 +63,7 @@ describe('ListLeavesComponent', () => {
     component.ngOnInit();
 
     //expecting the leave service method to be called
-    expect(feeServiceSpy).toHaveBeenCalledWith();
+    expect(leaveServiceSpy).toHaveBeenCalledWith();
 
     //expecting the leave list to be populated
     expect(component.leaves).toEqual(
@@ -73,7 +75,8 @@ describe('ListLeavesComponent', () => {
           startDate: "2023-05-30",
           endDate: "2023-05-30",
           status: "pending",
-          reason: "event"
+          reason: "event",
+          time: "30-05-2023 20:29",
         },
 
         {
@@ -83,7 +86,8 @@ describe('ListLeavesComponent', () => {
           startDate: "2023-05-30",
           endDate: "2023-06-02",
           status: "pending",
-          reason: "sick"
+          reason: "sick",
+          time: "30-05-2023 20:29",
         }
       ]
     );

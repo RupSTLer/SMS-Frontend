@@ -47,6 +47,55 @@ describe('MessageService', () => {
   });
 
 
+  describe('get a message details by senderId', () => {
+    it('should make a GET request to retrieve msg details by senderId', async () => {
+
+      const stuId = "SMS004";
+      const getMsgsData = {
+        id: 4,
+        studentId: stuId,
+        studentName:"Ritam Roy",
+        startDate: "2023-06-04",
+        endDate: "2023-06-08",
+        status: "approved",
+        reason: "marraige",
+        time: "30-05-2023 20:29",
+      };
+
+      (http.get as jest.Mock).mockReturnValueOnce(Promise.resolve(getMsgsData));
+
+      const getMsgsPromise = msgService.getMsgBySenderId(stuId);
+      expect(http.get).toHaveBeenCalledWith(`${msgService.baseURL}/getMsgBySenderId/${stuId}`);
+      expect(getMsgsPromise).resolves.toEqual(getMsgsData);
+
+    });
+  });
+
+  describe('get a message details by receiverId', () => {
+    it('should make a GET request to retrieve msg details by receiverId', async () => {
+
+      const stuId = "SMS004";
+      const getMsgsData = {
+        id: 4,
+        studentId: stuId,
+        studentName:"Ritam Roy",
+        startDate: "2023-06-04",
+        endDate: "2023-06-08",
+        status: "approved",
+        reason: "marraige",
+        time: "30-05-2023 20:29",
+      };
+
+      (http.get as jest.Mock).mockReturnValueOnce(Promise.resolve(getMsgsData));
+
+      const getMsgsPromise = msgService.getMsgByReceiverId(stuId);
+      expect(http.get).toHaveBeenCalledWith(`${msgService.baseURL}/getMsgByReceiverId/${stuId}`);
+      expect(getMsgsPromise).resolves.toEqual(getMsgsData);
+
+    });
+  });
+
+
   describe('listAll messages', () => {
     it('should make a GET request to retrieve message list', async () => {
       const msgListMockData = [{

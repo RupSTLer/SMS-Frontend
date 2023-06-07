@@ -3,6 +3,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../_services/user.service';
 import { NotificationService } from '../_services/notification.service';
+import { User } from '../entities/user';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,7 @@ import { NotificationService } from '../_services/notification.service';
 export class RegisterComponent implements OnInit{
   
   hide = true;
+  user: User = new User();
   
   constructor(
     private userService: UserService, 
@@ -21,7 +23,7 @@ export class RegisterComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  addForm = new FormGroup({
+  registerForm = new FormGroup({
     userName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]{4,}')]),
     password: new FormControl('',[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z]).{5,}')]),
     name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+')]),
@@ -42,63 +44,70 @@ export class RegisterComponent implements OnInit{
   // getter for validation
   get userName()
   {
-    return this.addForm.get('userName');
+    return this.registerForm.get('userName');
   }
   get password()
   {
-    return this.addForm.get('password');
+    return this.registerForm.get('password');
   }
   get name()
   {
-    return this.addForm.get('name');
+    return this.registerForm.get('name');
   }
   get age()
   {
-    return this.addForm.get('age');
+    return this.registerForm.get('age');
   }
   get birthDate()
   {
-    return this.addForm.get('birthDate');
+    return this.registerForm.get('birthDate');
   }
   get gender()
   {
-    return this.addForm.get('gender');
+    return this.registerForm.get('gender');
   }
   get address()
   {
-    return this.addForm.get('address');
+    return this.registerForm.get('address');
   }
   get phoneNo()
   {
-    return this.addForm.get('phoneNo');
+    return this.registerForm.get('phoneNo');
   }
   get email()
   {
-    return this.addForm.get('email');
+    return this.registerForm.get('email');
   }
   get classe()
   {
-    return this.addForm.get('classe');
+    return this.registerForm.get('classe');
   }
   get section()
   {
-    return this.addForm.get('section');
+    return this.registerForm.get('section');
   }
   get department() {
-    return this.addForm.get('department');
+    return this.registerForm.get('department');
   }
 
 
+  // register(registerForm: NgForm) 
+  // {
+  //   console.log(registerForm.value);
+  //   this.userService.register(registerForm.value).subscribe(
+  //     (response) => {
+  //       this.notify.showSuccess("Registered Successfully!")
+  //       this.router.navigate(['/login']);
+  //       // console.log(registerForm.value);
+  //     },
 
+  //   );
+  // }
 
-
-
-
-
-  register(registerForm: NgForm) 
+  register() 
   {
-    console.log(registerForm.value);
-    this.userService.register(registerForm.value).subscribe(
+    // console.log(registerForm.value);
+    this.userService.register(this.user).subscribe(
       (response) => {
         this.notify.showSuccess("Registered Successfully!")
         this.router.navigate(['/login']);

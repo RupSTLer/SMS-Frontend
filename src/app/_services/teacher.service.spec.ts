@@ -44,14 +44,14 @@ describe('teacherService', () => {
         department: "SCIENCE"
       };
 
-      // (http.post as jest.Mock).mockReturnValueOnce(of({}));
-      (http.post as jest.Mock).mockReturnValueOnce(Promise.resolve({teacherId: "SMT003"}));
+      (http.post as jest.Mock).mockReturnValueOnce(of('Teacher added successfully'));
+      // (http.post as jest.Mock).mockReturnValueOnce(Promise.resolve({teacherId: "SMT003"}));
 
       // await teacherService.addTeacher(teacherMockData).toPromise();
 
-      const addTeacherPromise = teacherService.addTeacher(teacherMockData);
-      expect(http.post).toHaveBeenCalledWith(`${teacherService.baseURL}/addTeacher`, teacherMockData);
-      expect(addTeacherPromise).resolves.toEqual({teacherId: "SMT003"});
+      const addTeacherPromise = teacherService.addTeacher(teacherMockData).toPromise();
+      expect(http.post).toHaveBeenCalledWith(`${teacherService.baseURL}/addTeacher`, teacherMockData, {responseType: 'text'});
+      expect(addTeacherPromise).resolves.toEqual(('Teacher added successfully'));
 
     });
   });
@@ -77,8 +77,8 @@ describe('teacherService', () => {
       (http.put as jest.Mock).mockReturnValueOnce(Promise.resolve({teacherId: teaId}));
 
       const updateTeacherPromise = teacherService.updateTeacher(teaId, updateMockData);
+      expect(http.put).toHaveBeenCalledWith(`${teacherService.baseURL}/${teaId}`, updateMockData, {responseType: 'text'});
       await expect(updateTeacherPromise).resolves.toEqual({teacherId: teaId});
-      expect(http.put).toHaveBeenCalledWith(`${teacherService.baseURL}/${teaId}`, updateMockData);
     });
   });
 

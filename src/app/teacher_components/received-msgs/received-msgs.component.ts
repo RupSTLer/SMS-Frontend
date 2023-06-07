@@ -1,27 +1,26 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { LeaveService } from '../../_services/leave.service';
+import { MessageService } from '../../_services/message.service';
 import { NotificationService } from '../../_services/notification.service';
-import { Leave } from '../../entities/leave';
+import { Message } from '../../entities/message';
 import { UserDetails } from '../../entities/userDetails';
 import { User } from '../../entities/user';
 import { UserService } from '../../_services/user.service';
 
 @Component({
-  selector: 'app-my-leaves',
-  templateUrl: './my-leaves.component.html',
-  styleUrls: ['./my-leaves.component.css']
+  selector: 'app-received-msgs',
+  templateUrl: './received-msgs.component.html',
+  styleUrls: ['./received-msgs.component.css']
 })
-export class MyLeavesComponent implements OnInit {
+export class ReceivedMsgsComponent implements OnInit {
 
-  id: number;
-  leaves: Leave[]=[];
+  myMsgs: Message[]=[];
   userDetails: UserDetails = new UserDetails();
   allDetails: User = new User();
 
-  displayedColumns: string[] = ['id', 'studentId', 'studentName', 'startDate', 'endDate', 'reason', 'time', 'status'];
-  dataSource = new MatTableDataSource<Leave>();
+  displayedColumns: string[] = ['id','senderId', 'receiverId', 'message', 'time'];
+  dataSource = new MatTableDataSource<Message>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -29,9 +28,8 @@ export class MyLeavesComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-
   constructor(
-    private leaveService: LeaveService, 
+    private msgService: MessageService, 
     private notify: NotificationService,
     private userService: UserService
     ) { }
@@ -40,39 +38,37 @@ export class MyLeavesComponent implements OnInit {
     this.getUserDetails();
   }
 
-  getLeaveDetailsByStudentId(studentId: string) {
-    this.leaveService.getLeaveDetailsByStudentId(studentId).subscribe(data => {
-      // console.log(data);
-      this.leaves = data;
+  getMsgsByReceiverId(receiverId: string) {
+    this.msgService.getMsgByReceiverId(receiverId).subscribe( data => {
+      console.log(data);
+      console.log(receiverId);
+      this.myMsgs = data;
     });
   }
 
-
-  getUserDetails() {
+  getUserDetails()
+  {
     this.userService.getUserDetails().subscribe(
       data => {
-        // console.log(data);
         this.userDetails = data;
+        // console.log(data);
         // console.log(this.userDetails.username);
         this.getAllDetailsByUserName(this.userDetails.username);
       },
     );
   }
 
-  getAllDetailsByUserName(username: string) {
+  getAllDetailsByUserName(username: string)
+  {
     this.userService.getAllDetailsByUserName(username).subscribe(
-      (data:any) => {
+      data =>
+      {
         this.allDetails = data;
         // console.log(this.allDetails);
         // console.log(this.allDetails.userID);
-        this.getLeaveDetailsByStudentId(this.allDetails.userID);
+        this.getMsgsByReceiverId(this.allDetails.userID);
       }
     );
   }
-
-
-
-
-  
 
 }

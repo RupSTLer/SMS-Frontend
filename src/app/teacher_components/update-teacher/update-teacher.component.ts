@@ -24,7 +24,7 @@ export class UpdateTeacherComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.params.subscribe(param => {
+    this.route.params?.subscribe(param => {
       this.teacherId = param['teacherId'];
     });
     this.teacherService.getTeacherByTeacherId(this.teacherId).subscribe(data => {

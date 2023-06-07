@@ -1,6 +1,6 @@
 <div class="container w3-pale-green mat-elevation-z8 mt-5 mb-5" style="padding: 30px; border-radius: 10px; width: 50%;">
   <h1>Apply Leave</h1>
-  <form [formGroup]="leaveForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="leaveForm" (ngSubmit)="applyLeave()">
     <div class="form-group">
       <label for="studentId">Student-ID</label>
       <input [(ngModel)]="leave.studentId" type="text" class="form-control" id="studentId" formControlName="studentId"
@@ -33,7 +33,7 @@
       <textarea [(ngModel)]="leave.reason" class="form-control" id="reason" [ngModelOptions]="{standalone: true}"
         [maxlength]="maxChars">
               required></textarea>
-      <label *ngIf="leave.reason.length > 60" class="nopadding clrlbl">Characters Remaining:
+      <label *ngIf="(leave.reason?.length || 0) > 60" class="nopadding clrlbl">Characters Remaining:
         {{leave.reason.length}}/{{maxChars}}</label>
     </div>
     <br>

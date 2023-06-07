@@ -11,19 +11,16 @@ import { UpdateStudentComponent } from './student_components/update-student/upda
 import { ViewStudentComponent } from './student_components/view-student/view-student.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './_auth/auth.guard';
-import { AdminProfileComponent } from './admin_components/admin-profile/admin-profile.component';
 import { NewsComponent } from './news/news.component';
 import { AddTeacherComponent } from './teacher_components/add-teacher/add-teacher.component';
 import { ListTeacherComponent } from './teacher_components/list-teacher/list-teacher.component';
 import { ViewTeacherComponent } from './teacher_components/view-teacher/view-teacher.component';
 import { UpdateTeacherComponent } from './teacher_components/update-teacher/update-teacher.component';
 import { StudentDashboardComponent } from './student_components/student-dashboard/student-dashboard.component';
-import { StudentProfileComponent } from './student_components/student-profile/student-profile.component';
 import { MessageTeacherComponent } from './student_components/message-teacher/message-teacher.component';
 import { ApplyLeaveComponent } from './student_components/apply-leave/apply-leave.component';
 import { PayFeesComponent } from './student_components/pay-fees/pay-fees.component';
 import { TeacherDashboardComponent } from './teacher_components/teacher-dashboard/teacher-dashboard.component';
-import { TeacherProfileComponent } from './teacher_components/teacher-profile/teacher-profile.component';
 import { ListLeavesComponent } from './teacher_components/list-leaves/list-leaves.component';
 import { ListFeesComponent } from './teacher_components/list-fees/list-fees.component';
 import { ListMsgsComponent } from './teacher_components/list-msgs/list-msgs.component';
@@ -32,6 +29,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyMsgsComponent } from './student_components/my-msgs/my-msgs.component';
 import { MyFeesComponent } from './student_components/my-fees/my-fees.component';
 import { MyLeavesComponent } from './student_components/my-leaves/my-leaves.component';
+import { ReceivedMsgsComponent } from './teacher_components/received-msgs/received-msgs.component';
 
 
 //configuring the routes for our components
@@ -46,7 +44,6 @@ const routes: Routes = [
   { path: 'forbidden', component: ForbiddenComponent },
   //student 
   { path: 'studentDashboard', component: StudentDashboardComponent },
-  { path: 'studentProfile', component: StudentProfileComponent },
   { path: 'addStudent', component: AddStudentComponent, canActivate: [AuthGuard], data: { roles: ['Admin'] } },
   { path: 'listStudent', component: ListStudentComponent },
   { path: 'viewStudent/:studentId', component: ViewStudentComponent },
@@ -60,15 +57,14 @@ const routes: Routes = [
   { path: 'myLeaves', component: MyLeavesComponent },
   //teacher
   { path: 'teacherDashboard', component: TeacherDashboardComponent },
-  { path: 'teacherProfile', component: TeacherProfileComponent },
   { path: 'addTeacher', component: AddTeacherComponent, canActivate: [AuthGuard], data: { roles: ['Admin'] } },
   { path: 'listTeacher', component: ListTeacherComponent },
   { path: 'viewTeacher/:teacherId', component: ViewTeacherComponent },
   { path: 'updateTeacher/:teacherId', component: UpdateTeacherComponent, canActivate: [AuthGuard], data: { roles: ['Admin'] } },
-  { path: 'adminProfile', component: AdminProfileComponent, canActivate: [AuthGuard], data: { roles: ['Admin'] } },
   { path: 'listLeaves', component: ListLeavesComponent },
   { path: 'listFees', component: ListFeesComponent },
   { path: 'listMsgs', component: ListMsgsComponent },
+  { path: 'receivedMsgs', component: ReceivedMsgsComponent },
 
   {path: 'userProfile', component: UserProfileComponent},
   { path: 'news', component: NewsComponent }

@@ -10,33 +10,24 @@ import { UserDetails } from '../entities/userDetails';
 export class UserComponent implements OnInit {
 
   message: string;
-  userDetails: UserDetails = new UserDetails();
   
-  constructor(private userService: UserService) { 
-  }
+  // constructor(private userService: UserService) { 
+  // }
 
   ngOnInit(): void {
-    // this.forUser();
-    this.userService.getUserDetails().subscribe(
-      userDetails => {
-        this.userDetails = userDetails;
-      },
-      error => {
-        console.log("error retrieving user details");
-      }
-    );
+
   }
 
 
-  forUser()
-  {
-    this.userService.forUser().subscribe(
-      (response) => {
-        console.log(response);
-        this.message = response;
-      }
-    );
-  }
+  // forUser()
+  // {
+  //   this.userService.forUser().subscribe(
+  //     (response) => {
+  //       console.log(response);
+  //       this.message = response;
+  //     }
+  //   );
+  // }
 
 
 

@@ -3,7 +3,7 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotificationService } from '../../_services/notification.service';
 import { ToastrModule } from 'ngx-toastr';
-import { of, throwError } from 'rxjs';
+import { of} from 'rxjs';
 import { FeeService } from '../../_services/fee.service';
 import { ListMsgsComponent } from './list-msgs.component';
 import { MessageService } from '../../_services/message.service';
@@ -65,14 +65,16 @@ describe('ListMsgsComponent', () => {
       [
         {
           id: 3,
-          receiverId: 2,
+          senderId: "SMS003",
+          receiverId: "SMT005",
           message: "query on microservices",
           time: "23-05-2023 17:30"
         },
 
         {
           id: 2,
-          receiverId: 3,
+          senderId: "SMS001",
+          receiverId: "SMT003",
           message: "query on DBMS",
           time: "27-05-2023 13:30"
         }

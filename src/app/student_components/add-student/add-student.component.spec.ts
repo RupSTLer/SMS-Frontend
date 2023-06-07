@@ -25,7 +25,6 @@ describe('AddStudentComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AddStudentComponent],
       providers: [HttpClient, HttpHandler, StudentService, MatSnackBar, NotificationService],
-      // imports: [FormsModule, HttpClientTestingModule, ToastrModule.forRoot(), ReactiveFormsModule], { provide: StudentService, useValue: spy}
       imports: [ToastrModule.forRoot(), FormsModule, ReactiveFormsModule],
     })
       .compileComponents();
@@ -33,16 +32,7 @@ describe('AddStudentComponent', () => {
     fixture = TestBed.createComponent(AddStudentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    // studentServiceSpy = TestBed.inject(StudentService) as jest.Mocked<StudentService>;
     studentService = TestBed.inject(StudentService);
-
-    //mock the service method to return a dummy observable
-    // studentServiceSpy.addStudent.mockReturnValue(of({}));
-
-    // call ngOnInit to initialize the component and set the fields value
-    // component.ngOnInit();
-    // Object.defineProperty(component, 'userName', {writable: true});
-    // component.userName = 'rup123';
 
   });
 
@@ -71,8 +61,6 @@ describe('AddStudentComponent', () => {
       email: 'rup@gm.co'
 
     });
-
-    // expect(studentServiceSpy.addStudent).toHaveBeenCalledTimes(1);
 
   });
 

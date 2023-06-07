@@ -36,22 +36,6 @@ export class ListMsgsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-
-    // this.fees = [{
-    //   "id": 1,
-    //   "userName":"rup",
-    //   "password":"",
-    //   "name":"Ralph Del",
-    //   "email":"ralph@g.co"
-    // },
-    // {
-    //   "id": 2,
-    //   "userName":"rit",
-    //   "password":"",
-    //   "name":"Ritam Del",
-    //   "email":"rit@g.co"
-    // }];
-
     this.getAllMsgs();
   }
   getAllMsgs() {

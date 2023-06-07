@@ -4,9 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MessageService } from '../../_services/message.service';
 import { NotificationService } from '../../_services/notification.service';
 import { Message } from '../../entities/message';
-import { UserDetails } from 'src/app/entities/userDetails';
-import { User } from 'src/app/entities/user';
-import { UserService } from 'src/app/_services/user.service';
+import { UserDetails } from '../../entities/userDetails';
+import { User } from '../../entities/user';
+import { UserService } from '../../_services/user.service';
 
 
 @Component({

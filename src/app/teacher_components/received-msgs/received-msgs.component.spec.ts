@@ -6,38 +6,36 @@ import { ToastrModule } from 'ngx-toastr';
 import { of} from 'rxjs';
 import { FeeService } from '../../_services/fee.service';
 import { MessageService } from '../../_services/message.service';
+import { ReceivedMsgsComponent } from './received-msgs.component';
 
-import { MyMsgsComponent } from './my-msgs.component';
-
-describe('MyMsgsComponent', () => {
-  let component: MyMsgsComponent;
-  let fixture: ComponentFixture<MyMsgsComponent>;
+describe('ReceivedMsgsComponent', () => {
+  let component: ReceivedMsgsComponent;
+  let fixture: ComponentFixture<ReceivedMsgsComponent>;
   let msgService: MessageService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MyMsgsComponent],
+      declarations: [ReceivedMsgsComponent],
       providers: [HttpClient, HttpHandler, FeeService, MatSnackBar, NotificationService],
       imports: [ToastrModule.forRoot()],
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(MyMsgsComponent);
+    fixture = TestBed.createComponent(ReceivedMsgsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     msgService = TestBed.inject(MessageService);
   });
 
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should fetch the mocked message list using getMsgBySenderId method', () => {
+  it('should fetch the mocked message list using getMsgByReceiverId method', () => {
     const stuId = "SMS003";
     //mocking the fee service method
     const msgServiceSpy = jest
-      .spyOn(msgService, 'getMsgBySenderId')
+      .spyOn(msgService, 'getMsgByReceiverId')
       .mockReturnValue(of([
         {
           id: 3,
@@ -57,7 +55,7 @@ describe('MyMsgsComponent', () => {
       ]));
 
     //triggering the function
-    const mockService = msgService.getMsgBySenderId(stuId).toPromise();
+    const mockService = msgService.getMsgByReceiverId(stuId).toPromise();
 
     //expecting the msg service method to be called
     expect(mockService).resolves.toEqual(
@@ -80,5 +78,4 @@ describe('MyMsgsComponent', () => {
       ]
     );
   });
-
 });

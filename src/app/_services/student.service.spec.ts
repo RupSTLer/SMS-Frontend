@@ -44,12 +44,12 @@ describe('StudentService', () => {
         section: "A",
       };
 
-      // (http.post as jest.Mock).mockReturnValueOnce(of({}));
-      (http.post as jest.Mock).mockReturnValueOnce(Promise.resolve({studentId: "SMS003"}));
+      (http.post as jest.Mock).mockReturnValueOnce(of('Student added successfully'));
+      // (http.post as jest.Mock).mockReturnValueOnce(Promise.resolve({studentId: "SMS003"}));
 
-      const addStudentPromise = studentService.addStudent(studentMockData);
-      expect(http.post).toHaveBeenCalledWith(`${studentService.baseURL}/addStudent`, studentMockData);
-      expect(addStudentPromise).resolves.toEqual({studentId: "SMS003"});
+      const addStudentPromise = studentService.addStudent(studentMockData).toPromise();
+      expect(http.post).toHaveBeenCalledWith(`${studentService.baseURL}/addStudent`, studentMockData, {responseType: 'text'});
+      expect(addStudentPromise).resolves.toEqual(('Student added successfully'));
 
     });
   });
@@ -76,8 +76,8 @@ describe('StudentService', () => {
       (http.put as jest.Mock).mockReturnValueOnce(Promise.resolve({studentId: stuId}));
 
       const updateStudentPromise = studentService.updateStudent(stuId, updateMockData);
+      expect(http.put).toHaveBeenCalledWith(`${studentService.baseURL}/${stuId}`, updateMockData, {responseType: 'text'});
       await expect(updateStudentPromise).resolves.toEqual({studentId: stuId});
-      expect(http.put).toHaveBeenCalledWith(`${studentService.baseURL}/${stuId}`, updateMockData);
 
     });
   });

@@ -110,22 +110,4 @@ describe('ListStudentComponent', () => {
         );
     });
 
-    
-
-    
-    // it('should handle error when fetching the student list', () => {
-    //     const error = new Error('Failed to fetch student list');
-    //     const studentServiceSpy = jest.spyOn(studentService, 'listAllStudents').mockReturnValue(throwError(error));
-
-    //     //triggering the ngOnInit lifecycle hook
-    //     component.ngOnInit();
-
-    //     //expecting the student service method to be called
-    //     expect(studentServiceSpy).toHaveBeenCalledWith();
-
-    //     expect(component.error).toEqual('Failed to fetch student list');
-    //     expect(component.students).toEqual([]);
-    // });
-
-
 });

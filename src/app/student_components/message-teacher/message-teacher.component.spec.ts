@@ -3,14 +3,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MessageTeacherComponent } from './message-teacher.component';
 import { StudentService } from '../../_services/student.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { NotificationService } from 'src/app/_services/notification.service';
+import { NotificationService } from '../../_services/notification.service';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { MessageService } from '../../_services/message.service';
+import { of } from 'rxjs';
 
 describe('MessageTeacherComponent', () => {
   let component: MessageTeacherComponent;
   let fixture: ComponentFixture<MessageTeacherComponent>;
-  let studentService: StudentService;
+  let msgService: MessageService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -23,7 +25,7 @@ describe('MessageTeacherComponent', () => {
     fixture = TestBed.createComponent(MessageTeacherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    studentService = TestBed.inject(StudentService);
+    msgService = TestBed.inject(MessageService);
 });
 
   it('should create', () => {
@@ -32,19 +34,21 @@ describe('MessageTeacherComponent', () => {
 
   
   it('should save the message to the backend', () => {
-    //mocking the student service method
-    const studentServiceSpy = jest.spyOn(studentService, 'addMsg');
+    //mocking the addmessage method of message service
+    const msgServiceSpy = jest.spyOn(msgService, 'addMessage').mockReturnValueOnce(of({message: 'Message sent successfully..'}));
 
-    const testMessage = "This is a test message";
+    const mockData = {    
+      id: 2,
+      senderId: "SMS003",
+      receiverId: "SMT006",
+      message: "Hello sir",
+      time: "30-05-2023 20:29",
+    };
 
-    component.msg.message = testMessage;
+    const mockService = msgService.addMessage(mockData).toPromise();
 
-    component.addMsg();
-
-    expect(studentServiceSpy).toHaveBeenCalledWith(testMessage);
-
-    // expect(component.success).toBeTruthy();
-
+    expect(msgServiceSpy).toHaveBeenCalledWith(mockData);
+    expect(mockService).resolves.toEqual(of('Message sent successfully..'));
   });
 
 });

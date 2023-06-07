@@ -18,8 +18,8 @@ export class StudentService {
     return this.httpClient.post(`${this.baseURL}/addStudent`, student, {responseType: 'text'});
   }
 
-  updateStudent(studentId: string, student: Student): Observable<Object> {
-    return this.httpClient.put(`${this.baseURL}/${studentId}`, student);
+  updateStudent(studentId: string, student: Student) {
+    return this.httpClient.put(`${this.baseURL}/${studentId}`, student, {responseType: 'text'});
   }
 
   getStudentByStudentId(studentId: string): Observable<Student> {

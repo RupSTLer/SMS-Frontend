@@ -37,7 +37,6 @@ import { AddTeacherComponent } from './teacher_components/add-teacher/add-teache
 import { ListTeacherComponent } from './teacher_components/list-teacher/list-teacher.component';
 import { UpdateTeacherComponent } from './teacher_components/update-teacher/update-teacher.component';
 import { ViewTeacherComponent } from './teacher_components/view-teacher/view-teacher.component';
-import { AdminProfileComponent } from './admin_components/admin-profile/admin-profile.component';
 import { MatCardModule } from '@angular/material/card';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
@@ -48,20 +47,18 @@ import { MessageTeacherComponent } from './student_components/message-teacher/me
 // import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { StudentProfileComponent } from './student_components/student-profile/student-profile.component';
 import { ApplyLeaveComponent } from './student_components/apply-leave/apply-leave.component';
 import { PayFeesComponent } from './student_components/pay-fees/pay-fees.component';
 import { TeacherDashboardComponent } from './teacher_components/teacher-dashboard/teacher-dashboard.component';
-import { TeacherProfileComponent } from './teacher_components/teacher-profile/teacher-profile.component';
 import { ListLeavesComponent } from './teacher_components/list-leaves/list-leaves.component';
 import { ListFeesComponent } from './teacher_components/list-fees/list-fees.component';
-import { AboutComponent } from './admin/about/about.component';
 import { ListMsgsComponent } from './teacher_components/list-msgs/list-msgs.component';
 import { ClassScheduleComponent } from './student_components/class-schedule/class-schedule.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyMsgsComponent } from './student_components/my-msgs/my-msgs.component';
 import { MyFeesComponent } from './student_components/my-fees/my-fees.component';
 import { MyLeavesComponent } from './student_components/my-leaves/my-leaves.component';
+import { ReceivedMsgsComponent } from './teacher_components/received-msgs/received-msgs.component';
 
 @NgModule({
   declarations: [
@@ -82,24 +79,21 @@ import { MyLeavesComponent } from './student_components/my-leaves/my-leaves.comp
     ListTeacherComponent,
     UpdateTeacherComponent,
     ViewTeacherComponent,
-    AdminProfileComponent,
     StudentDashboardComponent,
     NewsComponent,
     MessageTeacherComponent,
-    StudentProfileComponent,
     ApplyLeaveComponent,
     PayFeesComponent,
     TeacherDashboardComponent,
-    TeacherProfileComponent,
     ListLeavesComponent,
     ListFeesComponent,
-    AboutComponent,
     ListMsgsComponent,
     ClassScheduleComponent,
     UserProfileComponent,
     MyMsgsComponent,
     MyFeesComponent,
     MyLeavesComponent,
+    ReceivedMsgsComponent,
   ],
   imports: [
     BrowserModule,

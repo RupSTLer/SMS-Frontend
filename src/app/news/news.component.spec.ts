@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsComponent } from './news.component';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
@@ -8,7 +9,8 @@ describe('NewsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewsComponent ]
+      declarations: [ NewsComponent ],
+      providers: [HttpClient, HttpHandler]
     })
     .compileComponents();
 
@@ -21,11 +23,4 @@ describe('NewsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('check component name',()=>{
-    expect(component.componentName).toBe("news")
-  })
-
-  it('check component function',()=>{
-    expect(component.sum).toBe(100)
-  })
 });

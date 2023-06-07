@@ -27,7 +27,7 @@ export class UpdateStudentComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.params.subscribe(param => {
+    this.route.params?.subscribe(param => {
       this.studentId = param['studentId'];
     });
     this.studentService.getStudentByStudentId(this.studentId).subscribe(data => {

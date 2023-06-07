@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Student } from 'src/app/entities/student';
-import { StudentService } from 'src/app/_services/student.service';
+import { Student } from '../../entities/student';
+import { StudentService } from '../../_services/student.service';
 
 @Component({
   selector: 'app-view-student',
@@ -19,7 +19,7 @@ export class ViewStudentComponent {
     private studentService: StudentService) {}
 
   ngOnInit(): void {
-    this.studentId = this.route.snapshot.params['studentId'];
+    this.studentId = this.route.snapshot?.params['studentId'];
 
     this.student = new Student();
     this.studentService.getStudentByStudentId(this.studentId).subscribe(data => {

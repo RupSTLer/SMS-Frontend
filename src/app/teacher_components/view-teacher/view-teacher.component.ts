@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TeacherService } from 'src/app/_services/teacher.service';
-import { Teacher } from 'src/app/entities/teacher';
+import { TeacherService } from '../../_services/teacher.service';
+import { Teacher } from '../../entities/teacher';
 
 @Component({
   selector: 'app-view-teacher',
@@ -15,7 +15,7 @@ export class ViewTeacherComponent {
   constructor(private route: ActivatedRoute, private teacherService: TeacherService) {}
 
   ngOnInit(): void {
-    this.teacherId = this.route.snapshot.params['teacherId'];
+    this.teacherId = this.route.snapshot?.params['teacherId'];
 
     this.teacher = new Teacher();
     this.teacherService.getTeacherByTeacherId(this.teacherId).subscribe(data => {

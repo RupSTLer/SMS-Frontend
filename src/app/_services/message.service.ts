@@ -25,5 +25,9 @@ export class MessageService {
     return this.http.get<Message[]>(`${this.baseURL}/getMsgBySenderId/${senderId}`)
   }
 
+  getMsgByReceiverId(receiverId: string): Observable<Message[]> {
+    return this.http.get<Message[]>(`${this.baseURL}/getMsgByReceiverId/${receiverId}`)
+  }
+
   
 }

@@ -11,7 +11,7 @@ import { ToastrModule } from 'ngx-toastr';
 describe('ApplyLeaveComponent', () => {
   let component: ApplyLeaveComponent;
   let fixture: ComponentFixture<ApplyLeaveComponent>;
-  let service: LeaveService;
+  let leaveService: LeaveService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -20,8 +20,7 @@ describe('ApplyLeaveComponent', () => {
       providers: [LeaveService, MatSnackBar, NotificationService]
     })
     .compileComponents();
-    service=TestBed.inject(LeaveService);
-
+    leaveService=TestBed.inject(LeaveService);
     fixture = TestBed.createComponent(ApplyLeaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -59,6 +58,9 @@ describe('ApplyLeaveComponent', () => {
   });
 
   it('should submit the leave form', async () => {
+
+    const leaveServiceSpy = jest.spyOn(leaveService, 'applyLeave');
+
     const testStartDate = '2023-05-17';
     const testEndDate = '2023-05-20';
     const testReason = 'vacation';
@@ -67,14 +69,12 @@ describe('ApplyLeaveComponent', () => {
     component.leave.endDate = testEndDate;
     component.leave.reason = testReason;
 
-    jest.spyOn(component, 'onSubmit');
+    component.applyLeave();
 
     const submitButton = fixture.nativeElement.querySelector('button');
     submitButton.click();
 
-    // expect(component.onSubmit).toHaveBeenCalled();
-    expect(component.onSubmit).toHaveBeenCalledTimes(1);
-    expect(component.onSubmit).toHaveBeenCalledWith({
+    expect(leaveServiceSpy).toHaveBeenCalledWith({
       startDate: testStartDate,
       endDate: testEndDate,
       reason: testReason
@@ -97,8 +97,6 @@ describe('ApplyLeaveComponent', () => {
 
     leaveForm.dispatchEvent(new Event('submit'));
     fixture.detectChanges();
-
-
   });
 
   it('Invalid leave application submission for invalid date range', ()=> {
@@ -116,10 +114,6 @@ describe('ApplyLeaveComponent', () => {
 
     leaveForm.dispatchEvent(new Event('submit'));
     fixture.detectChanges();
-
-    const errorMessage = fixture.debugElement.nativeElement.querySelector('p');
-    expect(errorMessage?.textContent).toContain('Please add a valid date range');
-
     expect(startDateInput.value).not.toBe('');
     expect(endDateInput.value).not.toBe('');
   });

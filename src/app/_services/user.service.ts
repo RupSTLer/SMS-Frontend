@@ -24,9 +24,9 @@ export class UserService {
     private timerService: TimerService,
     private router: Router) 
     {
-      this.timerService.getTimer().subscribe(()=>{
-        this.logout();
-      })
+      // this.timerService.getTimer().subscribe(()=>{
+      //   this.logout();
+      // })
      }
 
 
@@ -37,8 +37,7 @@ export class UserService {
 
   public login(loginData: any) {
     return this.http.post(this.baseURL + '/authenticate', loginData, {headers: this.requestHeader});
-
-    this.timerService.resetTimer();
+    // this.timerService.resetTimer();
   }
 
   logout(): void {

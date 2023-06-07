@@ -3,10 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { UserService } from './user.service';
 import { HttpClient } from '@angular/common/http';
 import { UserAuthService } from './user-auth.service';
+import { TimerService } from './timer.service';
+import { Router } from '@angular/router';
 
 describe('UserService', () => {
   let userService: UserService;
   let userAuthService: UserAuthService;
+  let timerService: TimerService;
+  let router: Router;
   let http: HttpClient;
 
   beforeEach(() => {
@@ -20,7 +24,7 @@ describe('UserService', () => {
       
     } as unknown as HttpClient;
 
-    userService = new UserService(http, userAuthService);
+    userService = new UserService(http, userAuthService, timerService, router);
 
     // service = TestBed.inject(UserService);
   });

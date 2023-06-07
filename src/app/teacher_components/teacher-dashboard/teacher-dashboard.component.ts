@@ -1,11 +1,11 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { StudentService } from 'src/app/_services/student.service';
-import { TeacherService } from 'src/app/_services/teacher.service';
-import { UserService } from 'src/app/_services/user.service';
-import { User } from 'src/app/entities/user';
-import { UserDetails } from 'src/app/entities/userDetails';
+import { StudentService } from '../../_services/student.service';
+import { TeacherService } from '../../_services/teacher.service';
+import { UserService } from '../../_services/user.service';
+import { User } from '../../entities/user';
+import { UserDetails } from '../../entities/userDetails';
 
 @Component({
   selector: 'app-teacher-dashboard',

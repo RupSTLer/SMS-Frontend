@@ -1,11 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NotificationService } from '../_services/notification.service';
 import { UserAuthService } from '../_services/user-auth.service';
 import { UserService } from '../_services/user.service';
-import { TimerService } from '../_services/timer.service';
 import { UserDetails } from '../entities/userDetails';
-import { User } from '../entities/user';
 
 @Component({
   selector: 'app-header',
@@ -26,7 +24,7 @@ export class HeaderComponent implements OnInit {
     private router: Router, 
     public userService: UserService,
     private notify: NotificationService,
-    private route: ActivatedRoute) {
+    ) {
     }
   
   ngOnInit(): void {
@@ -58,9 +56,3 @@ export class HeaderComponent implements OnInit {
   }
 
 }
-
-
-      // this.timerService.getTimer().subscribe(() => {
-      //   this.logout();
-      //   this.userAuthService.clear();
-      // });

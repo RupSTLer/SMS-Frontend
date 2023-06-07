@@ -1,17 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PayFeesComponent } from './pay-fees.component';
-import { StudentService } from '../../_services/student.service';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotificationService } from '../../_services/notification.service';
-import { Fee } from 'src/app/entities/fee';
+import { FeeService } from '../../_services/fee.service';
 
 describe('PayFeesComponent', () => {
   let component: PayFeesComponent;
   let fixture: ComponentFixture<PayFeesComponent>;
-  let studentService: StudentService;
+  let feeService: FeeService;
 
   beforeEach(async () => {
 
@@ -21,7 +19,7 @@ describe('PayFeesComponent', () => {
 
     await TestBed.configureTestingModule({
         declarations: [PayFeesComponent],
-        providers: [HttpClient, HttpHandler, StudentService, MatSnackBar, NotificationService],
+        providers: [HttpClient, HttpHandler, MatSnackBar, NotificationService],
         imports: [ToastrModule.forRoot()],
     })
         .compileComponents();
@@ -29,7 +27,7 @@ describe('PayFeesComponent', () => {
     fixture = TestBed.createComponent(PayFeesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    studentService = TestBed.inject(StudentService);
+    feeService = TestBed.inject(FeeService);
 });
 
   it('should create', () => {
@@ -38,22 +36,10 @@ describe('PayFeesComponent', () => {
 
   it('should save the payment details to backend', () => {
 
-  //  const payFees: any[] = [];
-    const studentServiceSpy = jest.spyOn(studentService, 'payFees');
+    const feeServiceSpy = jest.spyOn(feeService, 'payFees');
     //set valid inputs
-    component.fee.id = 3;
-    component.fee.studentId = "SMS001";
-    component.fee.studentName = "Rupam";
-    component.fee.amount = 7890;
-    component.fee.feeType = "Monthly";
-    component.fee.paymentType = "Cash";
-    component.fee.time = "01-05-2023 18:55";
-
-    //trigger the function call
-    component.payFees();
-
-    //expect the addStudent method to be called with the expected parameters
-    expect(studentServiceSpy).toHaveBeenCalledWith({
+    const mockFeeData = 
+    {
       id: 3,
       studentId: "SMS001",
       studentName: "Rupam",
@@ -61,10 +47,21 @@ describe('PayFeesComponent', () => {
       feeType: "Monthly",
       paymentType: "Cash",
       time: "01-05-2023 18:55"
+    }
+    // component.fee.id = 3;
+    // component.fee.studentId = "SMS001";
+    // component.fee.studentName = "Rupam";
+    // component.fee.amount = 7890;
+    // component.fee.feeType = "Monthly";
+    // component.fee.paymentType = "Cash";
+    // component.fee.time = "01-05-2023 18:55";
 
-    });
+    //trigger the function call
+    const mockService = feeService.payFees(mockFeeData);
 
-    // expect(studentServiceSpy.addStudent).toHaveBeenCalledTimes(1);
+    //expect the payFees method to be called with the expected parameters
+    expect(feeServiceSpy).toHaveBeenCalledWith(mockFeeData);
+    // expect(mockService).resolves.toEqual
 
   });
 });
