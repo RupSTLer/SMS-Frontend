@@ -16,7 +16,7 @@ pipeline {
             steps{
                 script{
                     echo "running the test cases..."
-                    bat 'npm run test leave.service.spec.ts'
+                    bat 'npm run test'
                 }
             }
         }

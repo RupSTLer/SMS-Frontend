@@ -31,7 +31,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ListStudentComponent } from './student_components/list-student/list-student.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { AddTeacherComponent } from './teacher_components/add-teacher/add-teacher.component';
 import { ListTeacherComponent } from './teacher_components/list-teacher/list-teacher.component';
@@ -59,6 +58,7 @@ import { MyMsgsComponent } from './student_components/my-msgs/my-msgs.component'
 import { MyFeesComponent } from './student_components/my-fees/my-fees.component';
 import { MyLeavesComponent } from './student_components/my-leaves/my-leaves.component';
 import { ReceivedMsgsComponent } from './teacher_components/received-msgs/received-msgs.component';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -120,9 +120,7 @@ import { ReceivedMsgsComponent } from './teacher_components/received-msgs/receiv
     CalendarModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatPaginatorModule
-
-
+    MatPaginatorModule,
   ],
   providers: [
     // BnNgIdleService,

@@ -23,8 +23,7 @@ describe('UpdateStudentComponent', () => {
         declarations: [UpdateStudentComponent],
         providers: [HttpClient, HttpHandler, StudentService, MatSnackBar, NotificationService, {provide: ActivatedRoute, useValue: fakeActivatedRoute}],
         imports: [ToastrModule.forRoot(), FormsModule, ReactiveFormsModule],
-    })
-        .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UpdateStudentComponent);
     component = fixture.componentInstance;

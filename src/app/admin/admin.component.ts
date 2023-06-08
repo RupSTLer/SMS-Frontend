@@ -1,6 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { StudentService } from '../_services/student.service';
 import { UserService } from '../_services/user.service';
 import { TeacherService } from '../_services/teacher.service';
