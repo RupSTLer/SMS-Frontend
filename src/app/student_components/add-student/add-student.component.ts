@@ -15,7 +15,6 @@ export class AddStudentComponent implements OnInit {
 
   
   student: Student = new Student();
-  submitted=false;
   visible: boolean=true;
   hide: boolean = true;
 
@@ -101,9 +100,6 @@ export class AddStudentComponent implements OnInit {
 
 
   addStudent(){
-
-    this.submitted = true;
-
     this.studentService.addStudent(this.student).subscribe(data =>{
       console.log(data);
       if(data === "Username already exists")

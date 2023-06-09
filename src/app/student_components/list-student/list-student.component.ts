@@ -18,7 +18,7 @@ export class ListStudentComponent implements OnInit {
 
   students: Student[] = [];
   displayedColumns: string[] = ['studentId', 'userName', 'name', 'age', 'birthDate', 'gender', 'address', 'phoneNo', 'email', 'classe', 'section', 'view'];
-  displayedColumnsAdmin: string[] = ['studentId', 'userName', 'name', 'age', 'birthDate', 'gender', 'address', 'phoneNo', 'email', 'classe', 'section', 'edit', 'delete', 'view'];
+  displayedColumnsAdmin: string[] = ['studentId', 'userName', 'name', 'age', 'birthDate', 'gender', 'address', 'phoneNo', 'email', 'classe', 'edit', 'delete', 'view'];
   dataSource = new MatTableDataSource<Student>(this.students);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

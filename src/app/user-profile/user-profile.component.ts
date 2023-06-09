@@ -30,7 +30,15 @@ export class UserProfileComponent implements OnInit{
       userPassword: new FormControl(''),
       userID: new FormControl(''),
       name: new FormControl(''),
-      email: new FormControl(''),
+      age: new FormControl(''),
+      birthDate: new FormControl(''),
+      gender: new FormControl(''),
+      address: new FormControl(''),
+      phoneNo: new FormControl(''),
+      email : new FormControl(''),
+      classe: new FormControl(''),
+      section: new FormControl(''),
+      department: new FormControl(''),
       
     });
 
@@ -39,6 +47,9 @@ export class UserProfileComponent implements OnInit{
     }
     get studentName() {
       return this.profile.get('studentName');
+    }
+    get age() {
+      return this.profile.get('age');
     }
 
 
@@ -71,7 +82,16 @@ export class UserProfileComponent implements OnInit{
             userPassword: this.allDetails.userPassword || '',
             userID: this.allDetails.userID || '',
             name: this.allDetails.name || '',
-            email: this.allDetails.email || ''
+            // age: this.allDetails.age || ,
+            birthDate: this.allDetails.birthDate || '',
+            gender: this.allDetails.gender || '',
+            address: this.allDetails.address || '',
+            phoneNo: this.allDetails.phoneNo || '',
+            email: this.allDetails.email || '',
+            classe: this.allDetails.classe || '',
+            section: this.allDetails.section || '',
+            department: this.allDetails.department || '',
+
   
           });
   

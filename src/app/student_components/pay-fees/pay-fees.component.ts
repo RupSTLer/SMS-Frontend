@@ -95,7 +95,7 @@ export class PayFeesComponent implements OnInit {
       }
       else if(data === "Fees already paid")
       {
-        this.notify.showError("Fees already paid");
+        this.notify.showError("Fees already paid for " + this.fee.feeType);
       }
       else {
         this.notify.showError("StudentId doesn't exist");

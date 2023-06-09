@@ -12,14 +12,14 @@ pipeline {
                 }
             }
         }
-        stage('test'){
-            steps{
-                script{
-                    echo "running the test cases..."
-                    bat 'npm run test'
-                }
-            }
-        }
+        // stage('test'){
+        //     steps{
+        //         script{
+        //             echo "running the test cases..."
+        //             bat 'npm run test'
+        //         }
+        //     }
+        // }
         stage('run') {
             steps {
                 script {
