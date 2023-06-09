@@ -1,32 +1,32 @@
 pipeline {
     agent any
-    // tools{
-    //     nodejs 'node'
-    // }
+    tools{
+        nodejs 'node'
+    }
     stages {
         stage('build') {
             steps {
                 script {
                     echo "building the application..."
-                    // bat 'npm run ng -- build'
-                    bat 'ng build'
+                    bat 'npm run ng -- build'
+                    // bat 'ng build'
                 }
             }
         }
-        // stage('test'){
-        //     steps{
-        //         script{
-        //             echo "running the test cases..."
-        //             bat 'npm run test'
-        //         }
-        //     }
-        // }
+        stage('test'){
+            steps{
+                script{
+                    echo "running the test cases..."
+                    bat 'npm run test'
+                }
+            }
+        }
         stage('run') {
             steps {
                 script {
                     echo "Running the application..."
-                    // bat 'npm run ng -- serve'
-                    bat 'ng serve'
+                    bat 'npm run ng -- serve'
+                    // bat 'ng serve'
                 }
             }
         }
