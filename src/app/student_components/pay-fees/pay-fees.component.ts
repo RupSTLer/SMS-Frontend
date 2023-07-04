@@ -13,16 +13,19 @@ import { UserDetails } from '../../entities/userDetails';
   templateUrl: './pay-fees.component.html',
   styleUrls: ['./pay-fees.component.css']
 })
+
 export class PayFeesComponent implements OnInit {
 
-  // payFeesForm: FormGroup;
-  
   stuName: string;
   username: string;
   userDetails: UserDetails = new UserDetails();
   fee: Fee = new Fee();
   allDetails: User = new User();
-  // allDetails: User = new User();
+  currentYear: string = new Date().getFullYear().toString();
+  currentMonth: string = new Date().toLocaleString('default', {month: 'long'});
+
+  currentMonthNo: string = (new Date().getMonth() + 1).toString();
+  curdate = (new Date().getMonth() + 1).toString() + '-' + new Date().getFullYear().toString();
 
   constructor(private fb: FormBuilder,
     private feeService: FeeService,
@@ -33,22 +36,15 @@ export class PayFeesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserDetails();
-
-    // this.payFeesForm = this.fb.group({
-    //   studentId: ['', [Validators.required, Validators.pattern('^[SMS]{3}[0-9]{3}$')]],
-    //   studentName: new FormControl(this.allDetails.name || '', [Validators.required, Validators.pattern('[a-zA-Z]{2}[a-zA-Z ]+')]),
-    //   amount: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+[\.]?[0-9]{0,2}$')]),
-    //   feeType: new FormControl('', Validators.required),
-    //   paymentType: new FormControl('', Validators.required),
-    // });
   }
 
   payFeesForm = new FormGroup({
     studentId: new FormControl('', [Validators.required, Validators.pattern('^[SMS]{3}[0-9]{3}$')]),
     studentName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{2}[a-zA-Z ]+')]),
-    amount: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+[\.]?[0-9]{0,2}$')]),
     feeType: new FormControl('', Validators.required),
-    paymentType: new FormControl('', Validators.required),
+    duration: new FormControl('', Validators.required),
+    amount: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+[\.]?[0-9]{0,2}$')]),
+    // paymentType: new FormControl('', Validators.required),
   });
 
   // getter for validation
@@ -58,55 +54,70 @@ export class PayFeesComponent implements OnInit {
   get studentName() {
     return this.payFeesForm.get('studentName');
   }
-  get amount() {
-    return this.payFeesForm.get('amount');
-  }
   get feeType() {
     return this.payFeesForm.get('feeType');
   }
-  get paymentType() {
-    return this.payFeesForm.get('paymentType');
+  get duration() {
+    return this.payFeesForm.get('duration');
   }
+  get amount() {
+    return this.payFeesForm.get('amount');
+  }
+  // get paymentType() {
+  //   return this.payFeesForm.get('paymentType');
+  // }
 
   fillAmount()
   {
     if(this.fee.feeType === 'Monthly')
     {
-      this.fee.amount = 3333;
+      this.fee.amount = 999;
     }
     if(this.fee.feeType === 'Quarterly')
     {
-      this.fee.amount = 6666;
+      this.fee.amount = 999*3;
     }
     if(this.fee.feeType === 'Yearly')
     {
-      this.fee.amount = 9999;
+      this.fee.amount = 999*12;
     }
   }
 
-
-
+  fillYear()
+  {
+    this.fee.duration = this.currentYear;
+    console.log(this.currentYear);
+  }
+  fillMonth()
+  {
+    this.fee.duration = this.currentMonth;
+    console.log(this.currentMonth);
+  }
+  fillQuarter()
+  {
+    const month = new Date().getMonth() + 1; 
+    const currentQuarter:number = (month / 3);
+    this.fee.duration = 'Q' + Math.ceil(currentQuarter);
+    console.log(currentQuarter);
+  }
+  
   payFees() {
-    this.feeService.payFees(this.fee).subscribe(data => {
-      // console.log(data);
-      if (data === "Fees paid successfully..") {
-        this.notify.showSuccess("Fees paid successfully");
-        this.router.navigate(['/studentDashboard']);
+    this.feeService.payFees(this.fee).subscribe(
+      response => {
+        console.log(response);
+        if (response === "Fees paid successfully..") 
+        {
+          this.notify.showSuccess("Fees paid successfully");
+          this.router.navigate(['/studentDashboard']);
+        }
+        else
+        {
+          this.notify.showError(response);
+        }
       }
-      else if(data === "Fees already paid")
-      {
-        this.notify.showError("Fees already paid for " + this.fee.feeType);
-      }
-      else {
-        this.notify.showError("StudentId doesn't exist");
-      }
-    });
+    );
   }
-
-  onSubmit() {
-    // console.log(this.fee);   //returns the fees object created
-    this.payFees();
-  }
+  
 
   getUserDetails()
   {

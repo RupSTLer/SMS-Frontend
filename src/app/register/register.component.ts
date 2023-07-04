@@ -3,7 +3,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../_services/user.service';
 import { NotificationService } from '../_services/notification.service';
-import { User } from '../entities/user';
+import { Role, User } from '../entities/user';
 
 @Component({
   selector: 'app-register',
@@ -25,9 +25,10 @@ export class RegisterComponent implements OnInit{
 
   registerForm = new FormGroup({
     userName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]{4,}')]),
-    password: new FormControl('',[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z]).{5,}')]),
+    userPassword: new FormControl('',[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z]).{5,}')]),
+    // userID: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+')]),
-    age: new FormControl('', [Validators.required, Validators.min(6), Validators.max(18)]),
+    age: new FormControl('', [Validators.required]),
     birthDate: new FormControl('', [Validators.required, Validators.pattern('')]),
     gender: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9 .,-]+$')]),
@@ -36,6 +37,7 @@ export class RegisterComponent implements OnInit{
     classe: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{3,}')]),
     section: new FormControl('', [Validators.required, Validators.pattern('[A-D]')]),
     department: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{3,}')]),
+    role: new FormControl('', [Validators.required]),
 
   });
 
@@ -46,10 +48,14 @@ export class RegisterComponent implements OnInit{
   {
     return this.registerForm.get('userName');
   }
-  get password()
+  get userPassword()
   {
-    return this.registerForm.get('password');
+    return this.registerForm.get('userPassword');
   }
+  // get userID()
+  // {
+  //   return this.registerForm.get('userID');
+  // }
   get name()
   {
     return this.registerForm.get('name');
@@ -89,31 +95,33 @@ export class RegisterComponent implements OnInit{
   get department() {
     return this.registerForm.get('department');
   }
-
-
-  // register(registerForm: NgForm) 
-  // {
-  //   console.log(registerForm.value);
-  //   this.userService.register(registerForm.value).subscribe(
-  //     (response) => {
-  //       this.notify.showSuccess("Registered Successfully!")
-  //       this.router.navigate(['/login']);
-  //       // console.log(registerForm.value);
-  //     },
-
-  //   );
-  // }
+  get role() {
+    return this.registerForm.get('role');
+  }
 
   register() 
   {
-    // console.log(registerForm.value);
-    this.userService.register(this.user).subscribe(
+    const rolName:any = this.registerForm.get('role')?.value;
+    const role: Role[] = [{ roleName: rolName, roleDescription: ''}];
+    // const roles: Set<Role> = new Set<Role>();
+    // roles.add(role);
+    // roles.add({ roleName: roleNa});
+    const user:any = { ...this.registerForm.value, role};
+    console.log(user);
+    console.log("role "+ rolName);
+    this.userService.register(user, rolName).subscribe(
       (response) => {
+      console.log(response);
+      if(response === "User registered successfully")
+      {
         this.notify.showSuccess("Registered Successfully!")
         this.router.navigate(['/login']);
-        // console.log(registerForm.value);
-      },
-
+      }
+      else
+      {
+        this.notify.showError(response);
+      }
+    }
     );
   }
 

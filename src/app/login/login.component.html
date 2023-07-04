@@ -4,11 +4,11 @@
         <h2>Log In</h2>
         <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <!-- <form [formGroup]="loginForm" (ngSubmit)="login()"> -->
-            <input ngModel type="text" name="userName" placeholder="username" required>
+            <input ngModel type="text" name="userName" placeholder="username" required autocomplete="on">
             <!-- <p *ngIf="userName && userName.touched && userName.invalid"  style="color: red;">Please add a valid username</p> -->
             <div class="inputsss">
                 <input ngModel type="password" name="userPassword" placeholder="password" required
-                    [type]="hide ? 'password' : 'text'" value="enter username" #message>
+                    [type]="hide ? 'password' : 'text'" value="enter username" #message autocomplete="on">
                 <button class="btnn" mat-icon-button matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" style="color: white; display: flex;">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

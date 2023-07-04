@@ -29,7 +29,7 @@ export class AddTeacherComponent implements OnInit {
     userName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]{4,}')]),
     password: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z]).{5,}')]),
     name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+')]),
-    age: new FormControl('', [Validators.required, Validators.min(6), Validators.max(18)]),
+    age: new FormControl('', [Validators.required, Validators.min(25), Validators.max(40)]),
     birthDate: new FormControl('', [Validators.required, Validators.pattern('')]),
     gender: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9 .,-]+$')]),
@@ -77,26 +77,14 @@ export class AddTeacherComponent implements OnInit {
   addTeacher() {
     this.teacherService.addTeacher(this.teacher).subscribe(data => {
       console.log(data);
-      if(data === "Username already exists")
-      {
-        this.notify.showError(this.teacher.userName + " :username already exist");
-      }
-      else if(data === "Email already exists")
-      {
-        this.notify.showError(this.teacher.email + " :email already exist");
-      }
-      else if(data === "PhoneNo already exists")
-      {
-        this.notify.showError(this.teacher.phoneNo + " :phoneno already exist");
-      }
-      else if(data === "Invalid date. Date must be in between 2010 to 2020")
-      {
-        this.notify.showError(this.teacher.birthDate + " :birthdate is invalid. Date must be in between 2010 to 2020");
-      }
-      else if(data === "Teacher added successfully")
+      if(data === "Teacher added successfully")
       {
         this.notify.showSuccess(this.teacher.name + " is successfully added");
         this.goToTeacherList();
+      }
+      else
+      {
+        this.notify.showError(data);
       }
        
     });

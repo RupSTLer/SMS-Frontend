@@ -3,7 +3,8 @@ export class Fee {
     studentId: string;
     studentName: string;
     feeType: string;
+    duration: string;
     amount: number;
-    paymentType: string;
+    // paymentType: string;
     time: string;
 }

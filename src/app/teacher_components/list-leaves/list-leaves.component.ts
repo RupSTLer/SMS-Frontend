@@ -16,7 +16,7 @@ export class ListLeavesComponent implements OnInit {
   id: number;
   leaves: Leave[]=[];
 
-  displayedColumns: string[] = ['id', 'studentId', 'studentName', 'startDate', 'endDate', 'reason', 'time', 'status', 'approve', 'reject'];
+  displayedColumns: string[] = ['id', 'studentId', 'startDate', 'endDate', 'reason', 'time', 'status', 'approve', 'reject'];
   dataSource = new MatTableDataSource<Leave>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

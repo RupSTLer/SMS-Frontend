@@ -20,7 +20,7 @@ export class MyFeesComponent implements OnInit {
   allDetails: User = new User();
   length: number;
 
-  displayedColumns: string[] = ['id', 'studentId', 'studentName', 'feeType', 'amount', 'paymentType', 'time'];
+  displayedColumns: string[] = ['id', 'studentId', 'feeType', 'duration', 'amount', 'time'];
   dataSource = new MatTableDataSource<Fee>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

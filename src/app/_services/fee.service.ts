@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Fee } from '../entities/fee';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class FeeService {
     payFees(fee: Fee) {
       return this.http.post(`${this.baseURL}/payFees`, fee, {responseType: 'text'});
     }
-  
+
     getFeesDetails(id: number): Observable<Fee> {
       return this.http.get<Fee>(`${this.baseURL}/getFeesDetails/${id}`);
     }
@@ -31,6 +31,23 @@ export class FeeService {
 
     listFees(): Observable<Fee[]> {
       return this.http.get<Fee[]>(`${this.baseURL}/listFees`);
+    }
+
+    // .pipe(catchError(this.handleError))  
+    private handleError(error: HttpErrorResponse): Observable<never> {
+      let errorMessage = 'An error occcured';
+      if(error.error instanceof ErrorEvent)
+      {
+        errorMessage = error.error.message;
+      }
+      else if(error.error && error.error.message)
+      {
+        errorMessage = error.error.message;
+      }
+      else{
+        errorMessage = error.status === 0 ? 'Unable to connect to the server.' : 'server error';
+      }
+      return throwError(errorMessage);
     }
 
 }

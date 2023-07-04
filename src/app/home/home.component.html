@@ -19,48 +19,60 @@
 
 
 </body>
+<div class="w3-container w3-teal">
+  <app-list-teacher></app-list-teacher>
+  <br>
+</div>
 
-<div class="container-fluid" style="justify-content: center; margin-left: 55px;">
-  <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
-    <div class="col">
-      <div class="card h-100">
-        <img src="../../assets/images/admin.png" class="card-img-top user" alt="...">
-        <div class="card-body text-center">
-          <h1 class="card-title">ADMIN</h1>
-          <button class="btn btn-primary" type="button" routerLink="/login">VIEW</button>
+<div class="w3-container w3-blue">
+  <br>
+  <br>
+  <div class="container-fluid" style="justify-content: center; margin-left: 55px;">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+      
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../assets/images/admin.png" class="card-img-top user" alt="...">
+          <div class="card-body text-center">
+            <h1 class="card-title w3-red">ADMIN</h1>
+            <button class="btn btn-primary" type="button" routerLink="/login">VIEW</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../assets/images/teacher.png" class="card-img-top user" alt="...">
+          <div class="card-body text-center">
+            <h1 class="card-title w3-red">TEACHER</h1>
+            <button class="btn btn-primary" type="button" routerLink="/login">VIEW</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../assets/images/student1.png" class="card-img-top user" alt="...">
+          <div class="card-body text-center">
+            <h1 class="card-title w3-red">STUDENT</h1>
+            <button class="btn btn-primary" type="button" routerLink="/login">VIEW</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../../assets/images/teacher.png" class="card-img-top user" alt="...">
-        <div class="card-body text-center">
-          <h1 class="card-title">TEACHER</h1>
-          <button class="btn btn-primary" type="button" routerLink="/login">VIEW</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="../../assets/images/student1.png" class="card-img-top user" alt="...">
-        <div class="card-body text-center">
-          <h1 class="card-title">STUDENT</h1>
-          <button class="btn btn-primary" type="button" routerLink="/login">VIEW</button>
-        </div>
-      </div>
-    </div>
+
+    <br>
+    <br>
+
   </div>
-
-  <br>
-  <br>
-
 </div>
 
 
 
 
 
-  <!-- 
+<!-- 
   <mwl-calendar-day-view 
   [viewDate]="viewDate"
   [events]="events" >

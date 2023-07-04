@@ -40,9 +40,9 @@ describe('ListFeesComponent', () => {
           id: 3,
           studentId: "SMS001",
           studentName: "Rupam paul",
-          amount: 3333,
           feeType: "Monthly",
-          paymentType: "Cash",
+          amount: 3333,
+          duration: "June",
           time: "30-05-2023 02:09"
         },
 
@@ -50,9 +50,9 @@ describe('ListFeesComponent', () => {
           id: 4,
           studentId: "SMS002",
           studentName: "Ritam paul",
+          feeType: "Monthly",
           amount: 6666,
-          feeType: "Quaterly",
-          paymentType: "Cash",
+          duration: "May",
           time: "30-05-2023 02:09"
         }
       ]));
@@ -70,9 +70,9 @@ describe('ListFeesComponent', () => {
           id: 3,
           studentId: "SMS001",
           studentName: "Rupam paul",
-          amount: 3333,
           feeType: "Monthly",
-          paymentType: "Cash",
+          amount: 3333,
+          duration: "June",
           time: "30-05-2023 02:09"
         },
 
@@ -80,9 +80,9 @@ describe('ListFeesComponent', () => {
           id: 4,
           studentId: "SMS002",
           studentName: "Ritam paul",
+          feeType: "Monthly",
           amount: 6666,
-          feeType: "Quaterly",
-          paymentType: "Cash",
+          duration: "May",
           time: "30-05-2023 02:09"
         }
       ]

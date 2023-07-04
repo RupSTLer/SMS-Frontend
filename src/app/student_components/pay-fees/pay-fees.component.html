@@ -1,6 +1,6 @@
 <div class="container w3-teal mat-elevation-z8 mt-5 mb-5" style="padding: 30px; border-radius: 10px; width: 50%;">
-  <h1>Pay Fees Form</h1>
-  <form [formGroup]="payFeesForm" (ngSubmit)="onSubmit()">
+  <h1>Pay Fees</h1>
+  <form [formGroup]="payFeesForm" (ngSubmit)="payFees()">
 
     <div class="form-group">
       <label for="studentId">Student ID:</label>
@@ -24,26 +24,76 @@
       </select>
     </div>
 
+    <div *ngIf="fee.feeType === 'Monthly'" class="form-group">
+      <label for="duration">Paid for Month:</label>
+      <input type="text" [(ngModel)]="fee.duration" (ngModelChange)="fillMonth()" class="form-control w-70" formControlName="duration" required readonly>
+      <!-- <select [(ngModel)]="fee.duration" (ngModelChange)="fillMonth()" class="form-control w-70" formControlName="duration" required>
+        <option value="">--Select Month--</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select> -->
+    </div>
+
+    <div *ngIf="fee.feeType === 'Quarterly'" class="form-group">
+      <label for="duration">Paid for Quarter:</label>
+      <input type="text" [(ngModel)]="fee.duration" (ngModelChange)="fillQuarter()" class="form-control w-70" formControlName="duration" required readonly>
+      <!-- <select [(ngModel)]="fee.duration" class="form-control w-70" formControlName="duration" required>
+        <option value="">--Select Quarter--</option>
+        <option value="Q1">Q1</option>
+        <option value="Q2">Q2</option>
+        <option value="Q3">Q3</option>
+        <option value="Q4">Q4</option>
+      </select> -->
+    </div>
+
+    <div *ngIf="fee.feeType === 'Yearly'" class="form-group">
+      <label for="duration">Paid for Year:</label>
+      <input type="text" [(ngModel)]="fee.duration" (ngModelChange)="fillYear()" class="form-control w-70" formControlName="duration" required readonly>
+    </div>
+
     <div class="form-group">
       <label for="feesAmount">Fees Amount:</label>
       <input [(ngModel)]="fee.amount" type="number" class="form-control w-70" formControlName="amount" required readonly>
     </div>
     <!-- <p *ngIf="amount && amount.touched && amount.invalid" style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid amount</p> -->
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="paymentMethod">Payment Method:</label>
-      <select [(ngModel)]="fee.paymentType" class="form-control w-70" formControlName="paymentType" required>
+      <select [(ngModel)]="fee.paymentType" class="form-control w-70" formControlName="paymentType">
         <option value="">--Select Payment Method--</option>
         <option value="Cash">Cash</option>
         <option value="Cheque">Cheque</option>
         <option value="Credit Card">Credit Card</option>
         <option value="Debit Card">Debit Card</option>
       </select>
-    </div>
+    </div> -->
 
     <br>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="payFeesForm.invalid" style="font-size:medium;">Pay</button>
   </form>
 </div>
 
-<!-- [disabled]="payFeesForm.invalid" -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

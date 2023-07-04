@@ -102,26 +102,14 @@ export class AddStudentComponent implements OnInit {
   addStudent(){
     this.studentService.addStudent(this.student).subscribe(data =>{
       console.log(data);
-      if(data === "Username already exists")
-      {
-        this.notify.showError(this.student.userName + " :username already exist");
-      }
-      else if(data === "Email already exists")
-      {
-        this.notify.showError(this.student.email + " :email already exist");
-      }
-      else if(data === "PhoneNo already exists")
-      {
-        this.notify.showError(this.student.phoneNo + " :phoneno already exist");
-      }
-      else if(data === "Invalid date. Date must be in between 2010 to 2020")
-      {
-        this.notify.showError(this.student.birthDate + " :birthdate is invalid. Date must be in between 2010 to 2020");
-      }
-      else if(data === "Student added successfully")
+      if(data === "Student added successfully")
       {
         this.notify.showSuccess(this.student.name + " is successfully added");
         this.goToStudentList();
+      }
+      else
+      {
+        this.notify.showError(data);
       }
 
     }); 

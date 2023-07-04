@@ -40,20 +40,20 @@ describe('MyFeesComponent', () => {
         {
           id: 3,
           studentId: stuId,
-          studentName: "Rupam paul",
+          studentName:"Rupam Roy",
+          feeType:"Monthly",
           amount: 3333,
-          feeType: "Monthly",
-          paymentType: "Cash",
-          time: "30-05-2023 02:09"
+          duration: "June",
+          time: "30-05-2023 20:29",
         },
 
         {
           id: 4,
           studentId: stuId,
           studentName: "Rupam paul",
+          feeType: "Monthly",
           amount: 6666,
-          feeType: "Quaterly",
-          paymentType: "Cash",
+          duration: "May",
           time: "30-05-2023 02:09"
         }
       ]));

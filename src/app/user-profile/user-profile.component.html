@@ -1,12 +1,215 @@
-<div class="container w3-blue mat-elevation-z8 mt-5 mb-5" style="padding: 30px; border-radius: 10px; width: 50%;">
+<div class="container w3-blue mat-elevation-z8">
+  <h1 class="jumbotron"><b>PROFILE</b></h1>
+  <div class="profile">
+    <div class="profile-img">
+      <!-- <img src="../../assets/images/admin2.png" alt="profile-img"> -->
+      <img *ngIf="this.allDetails.gender == 'Male' && userService.roleMatch(['Student'])"
+        src="../../assets/images/student1.png" class="resize-img" alt="profile-img">
+      <img *ngIf="this.allDetails.gender == 'Female' && userService.roleMatch(['Student'])"
+        src="../../assets/images/student2.png" class="resize-img" alt="profile-img">
+
+      <img *ngIf="this.allDetails.gender == 'Male' && userService.roleMatch(['Teacher'])"
+        src="../../assets/images/teacher2.png" class="resize-img" alt="profile-img">
+      <img *ngIf="this.allDetails.gender == 'Female' && userService.roleMatch(['Teacher'])"
+        src="../../assets/images/teacher.png" class="resize-img" alt="profile-img">
+
+      <img *ngIf="this.allDetails.gender == 'Male' && userService.roleMatch(['Admin'])"
+        src="../../assets/images/admin2.png" class="resize-img" alt="profile-img">
+      <img *ngIf="this.allDetails.gender == 'Female' && userService.roleMatch(['Admin'])"
+        src="../../assets/images/admin.png" class="resize-img" alt="profile-img">
+      <br><br><br>
+      <!-- Button trigger modal pop up-->
+      <div class="btn" style="margin-left: 40px;">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateProfile">
+          Update Profile
+        </button>
+      </div>
+    </div>
+    <div class="profile-details">
+      <h2>Username: {{this.allDetails.userName}}</h2>
+      <h2>Password: {{this.allDetails.userPassword}}</h2>
+      <h2>ID: {{this.allDetails.userID}}</h2>
+      <h2>Name: {{this.allDetails.name}}</h2>
+      <h2>Age: {{this.allDetails.age}}</h2>
+      <h2>BirthDate: {{this.allDetails.birthDate}}</h2>
+      <h2>Gender: {{this.allDetails.gender}}</h2>
+      <h2>Address: {{this.allDetails.address}}</h2>
+      <h2>PhoneNo: {{this.allDetails.phoneNo}}</h2>
+      <h2>Email: {{this.allDetails.email}}</h2>
+      <h2 *ngIf="userService.roleMatch(['Student'])">Class: {{this.allDetails.classe}}</h2>
+      <h2 *ngIf="userService.roleMatch(['Student'])">Section: {{this.allDetails.section}}</h2>
+      <h2 *ngIf="userService.roleMatch(['Teacher']) || userService.roleMatch(['Admin'])">Department: {{this.allDetails.department}}</h2>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<!-- Modal pop up for updating profile details-->
+<div class="modal fade" id="updateProfile" tabindex="-1" aria-labelledby="updateProfileLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header w3-pale-green">
+        <h1 class="modal-title" id="updateProfileLabel" style="text-align: center;"><b>Update Profile Details</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body w3-blue" style="padding: 30px;">
+
+        <form [formGroup]="profile" (ngSubmit)="updateProfile()">
+
+          <div class="form-group">
+            <label for="userName">Username</label>
+            <input type="text" name="userName" id="userName" class="form-control" [(ngModel)]="user.userName"
+              placeholder="Enter username" formControlName="userName">
+            <label *ngIf="userName && userName.touched && userName.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid userName</label>
+          </div>
+
+          <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input [type]="hide ? 'userPassword' : 'text'" name="password" id="userPassword" class="form-control"
+              [(ngModel)]="user.userPassword" placeholder="Enter password" formControlName="userPassword">
+            <label *ngIf="userPassword && userPassword.touched && userPassword.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid password</label>
+          </div>
+
+          <div class="form-group">
+            <label for="userID">User-ID</label>
+            <input type="text" id="userID" name="userID" class="form-control" [(ngModel)]="user.userID"
+              placeholder="Enter userID" formControlName="userID">
+            <label *ngIf="userID && userID.touched && userID.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid userID</label>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" [(ngModel)]="user.name"
+              placeholder="Enter name" formControlName="name">
+            <label *ngIf="name && name.touched && name.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid name</label>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" class="form-control" [(ngModel)]="user.age" placeholder="Enter age"
+              formControlName="age">
+            <label *ngIf="age && age.touched && age.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid age</label>
+          </div>
+
+          <div class="form-group">
+            <label for="birthDate">BirthDate</label>
+            <input type="date" name="birthDate" id="birthDate" class="form-control" [(ngModel)]="user.birthDate"
+              placeholder="Enter birthDate" formControlName="birthDate">
+            <label *ngIf="birthDate && birthDate.touched && birthDate.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid birthDate</label>
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select type="text" name="gender" id="gender" class="form-control" [(ngModel)]="user.gender"
+              placeholder="Enter gender" formControlName="gender" style="color: black;">
+              <option [defaultSelected]="false">--Select Gender--</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+            <label *ngIf="gender && gender.touched && gender.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid gender</label>
+
+          </div>
+
+          <div class="form-group">
+            <label for="address">Full address</label>
+            <input type="text" name="address" id="address" class="form-control" [(ngModel)]="user.address"
+              placeholder="Enter address" formControlName="address">
+            <label *ngIf="address && address.touched && address.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid address</label>
+
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNo">PhoneNo</label>
+            <input type="text" name="phoneNo" id="phoneNo" class="form-control" [(ngModel)]="user.phoneNo"
+              placeholder="Enter phoneNo" formControlName="phoneNo">
+            <label *ngIf="phoneNo && phoneNo.touched && phoneNo.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid phoneNo</label>
+
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" [(ngModel)]="user.email"
+              placeholder="Enter email" formControlName="email">
+            <label *ngIf="email && email.touched && email.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid email</label>
+
+          </div>
+
+          <div class="form-group" *ngIf="userService.roleMatch(['Student'])">
+            <label for="classe">Class</label>
+            <input type="text" name="classe" id="classe" class="form-control" [(ngModel)]="user.classe"
+              placeholder="Enter class" formControlName="classe">
+            <label *ngIf="classe && classe.touched && classe.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid class</label>
+
+          </div>
+
+          <div class="form-group" *ngIf="userService.roleMatch(['Student'])">
+            <label for="section">Section</label>
+            <input type="text" name="section" id="section" class="form-control" [(ngModel)]="user.section"
+              placeholder="Enter section" formControlName="section">
+            <label *ngIf="section && section.touched && section.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid section</label>
+          </div>
+
+          <div class="form-group" *ngIf="userService.roleMatch(['Teacher'])">
+            <label for="department">Department</label>
+            <input type="text" name="department" id="section" class="form-control" [(ngModel)]="user.department"
+              placeholder="Enter department" formControlName="department">
+            <label *ngIf="department && department.touched && department.invalid"
+              style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid department</label>
+          </div>
+          <br>
+        </form>
+
+      </div>
+      <div class="modal-footer w3-gray">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="submit" value="submit" class="btn btn-primary">Save changes</button> -->
+        <input type="submit" value="save changes" (click)="updateProfile()" class="btn btn-primary">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container w3-blue mat-elevation-z8 mt-5 mb-5" style="padding: 30px; border-radius: 10px; width: 50%;">
     <h1>PROFILE</h1>
     <form [formGroup]="profile">
   
       <div class="form-group">
         <label for="userName">Username</label>
-        <input type="text" class="form-control w-70" formControlName="userName" required readonly>
+        <input type="text" class="form-control w-70" formControlName="userName" required >
       </div>
-      <!-- <p *ngIf="studentId && studentId.touched && studentId.invalid"  style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid ID</p> -->
   
       <div class="form-group">
         <label for="userPassword">User Password</label>
@@ -30,11 +233,9 @@
 
   
       <br>
-      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
     </form>
   </div>
-  
-  <!-- [disabled]="payFeesForm.invalid" -->
+   -->
 
 
 
@@ -42,7 +243,9 @@
 
 
 
+<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 
+<!-- <p *ngIf="studentId && studentId.touched && studentId.invalid"  style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid ID</p> -->
 
 <!-- 
 

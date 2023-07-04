@@ -66,12 +66,18 @@ export class MessageTeacherComponent implements OnInit{
     // this.msg.senderId = localStorage.getItem('userID')?.toString();
     this.msg.senderId = this.allDetails.userID;
     this.messageSer.addMessage(this.msg).subscribe( (data:any) => {
-      // console.log(data);
+      console.log(data);
       // this.msg = data;
+      // if(data === "Message sent successfully..")
+      // {
+        this.notify.showSuccess("Message sent successfully..");
+        this.router.navigate(['/studentDashboard']);
+      // }
+      // else
+      // {
+      //   this.notify.showError(data);
+      // }
     });  
-
-    this.notify.showSuccess("Message sent successfully..");
-    this.router.navigate(['/studentDashboard']);
   }
 
   getUserDetails()

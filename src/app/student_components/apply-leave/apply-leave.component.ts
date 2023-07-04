@@ -54,26 +54,15 @@ export class ApplyLeaveComponent implements OnInit {
       // const stringData: string = JSON.stringify(data).toString();
       // console.log(JSON.parse(stringData)['404']);
       console.log(data);
-      if (data === "EndDate must be greater than startDate") {
-        this.notify.showError("EndDate must be greater than startDate");
-      }
-      else if (data === "Leave already applied for the same dates") {
-        this.notify.showError("Leave already applied for the same dates");
-      }
-      else if (data === "Leave applied") {
+      if (data === "Leave applied") {
         this.notify.showSuccess("Leave applied");
         this.router.navigate(['/studentDashboard']);
       }
       else {
-        this.notify.showError("StudentId doesn't exist");
+        this.notify.showError(data);
       }
     });
   }
-
-  // onSubmit() {
-  //   // console.log(this.leave); //returns the leave object created
-  //   this.applyLeave();
-  // }
 
   getUserDetails()
   {
@@ -120,7 +109,6 @@ export class ApplyLeaveComponent implements OnInit {
     }
     return invalid ? { invalidRange: { startDate, endDate } } : null;
   };
-
 
 }
 

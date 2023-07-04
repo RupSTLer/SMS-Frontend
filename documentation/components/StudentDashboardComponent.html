@@ -1,0 +1,1193 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>school-management-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">school-management-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  StudentDashboardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/student_components/student-dashboard/student-dashboard.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-student-dashboard</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./student-dashboard.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./student-dashboard.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allDetails" >allDetails</a>
+                            </li>
+                            <li>
+                                <a href="#gender" >gender</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#sidenav" >sidenav</a>
+                            </li>
+                            <li>
+                                <a href="#studentName" >studentName</a>
+                            </li>
+                            <li>
+                                <a href="#userDetails" >userDetails</a>
+                            </li>
+                            <li>
+                                <a href="#username" >username</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getAllDetailsByUserName" >getAllDetailsByUserName</a>
+                            </li>
+                            <li>
+                                <a href="#getUserDetails" >getUserDetails</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(studentService: <a href="../injectables/StudentService.html" target="_self">StudentService</a>, teacherService: <a href="../injectables/TeacherService.html" target="_self">TeacherService</a>, userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, observer: BreakpointObserver)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>studentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StudentService.html" target="_self" >StudentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>teacherService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TeacherService.html" target="_self" >TeacherService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>observer</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllDetailsByUserName"></a>
+                    <span class="name">
+                        <span ><b>getAllDetailsByUserName</b></span>
+                        <a href="#getAllDetailsByUserName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllDetailsByUserName(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserDetails"></a>
+                    <span class="name">
+                        <span ><b>getUserDetails</b></span>
+                        <a href="#getUserDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserDetails()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allDetails"></a>
+                    <span class="name">
+                        <span ><b>allDetails</b></span>
+                        <a href="#allDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new User()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gender"></a>
+                    <span class="name">
+                        <span ><b>gender</b></span>
+                        <a href="#gender"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sidenav"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>sidenav</b></span>
+                        <a href="#sidenav"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSidenav</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSidenav)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="studentName"></a>
+                    <span class="name">
+                        <span ><b>studentName</b></span>
+                        <a href="#studentName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userDetails"></a>
+                    <span class="name">
+                        <span ><b>userDetails</b></span>
+                        <a href="#userDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/UserDetails.html" target="_self" >UserDetails</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new UserDetails()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="username"></a>
+                    <span class="name">
+                        <span ><b>username</b></span>
+                        <a href="#username"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/student_components/student-dashboard/student-dashboard.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BreakpointObserver } from &#x27;@angular/cdk/layout&#x27;;
+import { Component, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { StudentService } from &#x27;../../_services/student.service&#x27;;
+import { TeacherService } from &#x27;../../_services/teacher.service&#x27;;
+import { UserService } from &#x27;../../_services/user.service&#x27;;
+import { User } from &#x27;../../entities/user&#x27;;
+import { UserDetails } from &#x27;../../entities/userDetails&#x27;;
+
+@Component({
+  selector: &#x27;app-student-dashboard&#x27;,
+  templateUrl: &#x27;./student-dashboard.component.html&#x27;,
+  styleUrls: [&#x27;./student-dashboard.component.css&#x27;]
+})
+export class StudentDashboardComponent {
+
+  username: string;
+  gender: string
+  studentName: string
+  userDetails: UserDetails &#x3D; new UserDetails();
+  allDetails: User &#x3D; new User();
+  constructor(
+    private studentService: StudentService,
+    private teacherService: TeacherService,
+    private userService: UserService,
+    private observer: BreakpointObserver
+    ) {}
+
+  ngOnInit(): void {
+    this.getUserDetails();
+  }
+
+
+  getUserDetails()
+  {
+    this.userService.getUserDetails().subscribe(
+      data &#x3D;&gt; {
+        // console.log(data);
+        this.userDetails &#x3D; data;
+        // console.log(this.userDetails.username);
+        this.getAllDetailsByUserName(this.userDetails.username);
+      },
+    );
+  }
+
+  getAllDetailsByUserName(username: string)
+  {
+    this.userService.getAllDetailsByUserName(username).subscribe(
+      data &#x3D;&gt;
+      {
+        this.allDetails &#x3D; data;
+        this.studentName &#x3D; this.allDetails.name;
+        this.gender &#x3D; this.allDetails.gender;
+        console.log(this.allDetails);
+        console.log(this.allDetails.gender);
+      }
+    );
+  }
+
+
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
+
+  ngAfterViewInit() {
+    this.observer
+      .observe([&#x27;(max-width: 800px)&#x27;])
+      .subscribe((res: any) &#x3D;&gt; {
+        if (res.matches) {
+          this.sidenav.mode &#x3D; &#x27;over&#x27;;
+          this.sidenav.close();
+        } else {
+          this.sidenav.mode &#x3D; &#x27;side&#x27;;
+          this.sidenav.open();
+        }
+      });
+
+  }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+  &lt;button mat-icon-button *ngIf&#x3D;&quot;sidenav.mode &#x3D;&#x3D;&#x3D; &#x27;over&#x27;&quot; (click)&#x3D;&quot;sidenav.toggle()&quot;&gt;
+    &lt;mat-icon *ngIf&#x3D;&quot;!sidenav.opened&quot;&gt; menu &lt;/mat-icon&gt;
+    &lt;mat-icon *ngIf&#x3D;&quot;sidenav.opened&quot;&gt; close &lt;/mat-icon&gt;
+  &lt;/button&gt;
+  STUDENT DASHBOARD
+&lt;/mat-toolbar&gt;
+  
+  &lt;mat-sidenav-container&gt;
+    &lt;mat-sidenav #sidenav&#x3D;&quot;matSidenav&quot; class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+
+      &lt;div *ngIf&#x3D;&quot;this.gender &#x3D;&#x3D; &#x27;Male&#x27;&quot;&gt;
+        &lt;img  class&#x3D;&quot;avatar mat-elevation-z8&quot; src&#x3D;&quot;../../../assets/images/student1.png&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;div *ngIf&#x3D;&quot;this.gender &#x3D;&#x3D; &#x27;Female&#x27;&quot;&gt;
+        &lt;img  class&#x3D;&quot;avatar mat-elevation-z8&quot; src&#x3D;&quot;../../../assets/images/student2.png&quot;/&gt;
+      &lt;/div&gt;
+
+      &lt;p class&#x3D;&quot;name&quot;&gt;{{this.studentName}}&lt;/p&gt;
+      &lt;p class&#x3D;&quot;designation&quot;&gt;Student&lt;/p&gt;
+  
+      &lt;mat-divider&gt;&lt;/mat-divider&gt;
+  
+      &lt;button mat-button class&#x3D;&quot;menu-button text-white&quot; routerLink&#x3D;&quot;/home&quot;&gt;
+        &lt;mat-icon&gt;home&lt;/mat-icon&gt;
+        &lt;span&gt;Home&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button mat-button class&#x3D;&quot;menu-button text-white&quot; routerLink&#x3D;&quot;/userProfile&quot;&gt;
+        &lt;mat-icon&gt;person&lt;/mat-icon&gt;
+        &lt;span&gt;Profile&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;mat-divider&gt;&lt;/mat-divider&gt;
+
+      &lt;button mat-button class&#x3D;&quot;menu-button text-white&quot; routerLink&#x3D;&quot;/applyLeave&quot;&gt;
+        &lt;mat-icon&gt;&lt;span class&#x3D;&quot;material-symbols-outlined&quot;&gt;
+          next_week
+          &lt;/span&gt;&lt;/mat-icon&gt;
+        &lt;span&gt;Apply Leave&lt;/span&gt;
+      &lt;/button&gt;
+  
+      &lt;button mat-button class&#x3D;&quot;menu-button text-white&quot; routerLink&#x3D;&quot;/msgTeacher&quot;&gt;
+        &lt;mat-icon&gt;message&lt;/mat-icon&gt;
+        &lt;span&gt;Send Message&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;button mat-button class&#x3D;&quot;menu-button text-white&quot; routerLink&#x3D;&quot;/payFees&quot;&gt;
+        &lt;mat-icon&gt;currency_rupee&lt;/mat-icon&gt;
+        &lt;span&gt;Pay Fees&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/mat-sidenav&gt;
+    &lt;mat-sidenav-content&gt;
+      &lt;div class&#x3D;&quot;content mat-elevation-z8&quot;&gt;
+  
+        &lt;div class&#x3D;&quot;container&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-4 col-xl-3&quot;&gt;
+              &lt;div class&#x3D;&quot;card bg-c-green order-card&quot;&gt;
+                &lt;div class&#x3D;&quot;card-block abc&quot;&gt;
+                  &lt;h2 class&#x3D;&quot;m-b-20&quot;&gt;&lt;mat-icon style&#x3D;&quot;margin-top: 5px;&quot;&gt;message&lt;/mat-icon&gt;&lt;a style&#x3D;&quot;color: white;&quot; routerLink&#x3D;&quot;/myMsgs&quot;&gt;My Messages&lt;/a&gt;&lt;/h2&gt;
+                  &lt;!-- &lt;h2 class&#x3D;&quot;text-right&quot;&gt;&lt;i class&#x3D;&quot;fas fa-user-graduate f-left&quot;&gt;&lt;/i&gt;&lt;span&gt;{{countStu}}&lt;/span&gt;&lt;/h2&gt; --&gt;
+                  &lt;!-- &lt;p class&#x3D;&quot;m-b-0&quot;&gt;Pending Students&lt;span class&#x3D;&quot;f-right&quot;&gt;{{pendingstudentcount}}&lt;/span&gt;&lt;/p&gt; --&gt;
+                  &lt;!-- &lt;p class&#x3D;&quot;m-b-0&quot;&gt;Pending Teachers&lt;span class&#x3D;&quot;f-right&quot;&gt;&lt;/span&gt;&lt;/p&gt; --&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+            &lt;div class&#x3D;&quot;col-md-4 col-xl-3&quot;&gt;
+              &lt;div class&#x3D;&quot;card bg-c-green order-card&quot;&gt;
+                &lt;div class&#x3D;&quot;card-block abc&quot;&gt;
+                  &lt;h2 class&#x3D;&quot;m-b-20&quot;&gt;&lt;mat-icon&gt;next_week&lt;/mat-icon&gt;&lt;a style&#x3D;&quot;color: white;&quot; routerLink&#x3D;&quot;/myLeaves&quot;&gt;My Leaves&lt;/a&gt;&lt;/h2&gt;
+                  &lt;!-- &lt;h2 class&#x3D;&quot;text-right&quot;&gt;&lt;i class&#x3D;&quot;fas fa-user-graduate f-left&quot;&gt;&lt;/i&gt;&lt;span&gt;{{countStu}}&lt;/span&gt;&lt;/h2&gt; --&gt;
+                  &lt;!-- &lt;p class&#x3D;&quot;m-b-0&quot;&gt;Pending Students&lt;span class&#x3D;&quot;f-right&quot;&gt;{{pendingstudentcount}}&lt;/span&gt;&lt;/p&gt; --&gt;
+                  &lt;!-- &lt;p class&#x3D;&quot;m-b-0&quot;&gt;Pending Students&lt;span class&#x3D;&quot;f-right&quot;&gt;&lt;/span&gt;&lt;/p&gt; --&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+            &lt;div class&#x3D;&quot;col-md-4 col-xl-3&quot;&gt;
+              &lt;div class&#x3D;&quot;card bg-c-yellow order-card&quot;&gt;
+                &lt;div class&#x3D;&quot;card-block abc&quot;&gt;
+                  &lt;h2 class&#x3D;&quot;m-b-20&quot;&gt;&lt;mat-icon style&#x3D;&quot;margin-top: 4px;&quot;&gt;currency_rupee&lt;/mat-icon&gt;&lt;a style&#x3D;&quot;color: white;&quot; routerLink&#x3D;&quot;/myFees&quot;&gt;My Fees&lt;/a&gt;&lt;/h2&gt;
+                  &lt;!-- &lt;h2 class&#x3D;&quot;text-right&quot;&gt;&lt;i class&#x3D;&quot;fas fa-search-dollar f-left&quot;&gt;&lt;/i&gt;&lt;span&gt;&lt;/span&gt;&lt;/h2&gt; --&gt;
+                  &lt;!-- &lt;p class&#x3D;&quot;m-b-0&quot;&gt;Pending Salary&lt;span class&#x3D;&quot;f-right&quot;&gt;&lt;/span&gt;&lt;/p&gt; --&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+            &lt;div class&#x3D;&quot;col-md-4 col-xl-3&quot;&gt;
+              &lt;div class&#x3D;&quot;card bg-c-pink order-card&quot;&gt;
+                &lt;div class&#x3D;&quot;card-block abc&quot;&gt;
+                  &lt;h2 class&#x3D;&quot;m-b-20&quot;&gt;&lt;mat-icon style&#x3D;&quot;margin-top: 4px;&quot;&gt;event_note&lt;/mat-icon&gt;&lt;a style&#x3D;&quot;color: white;&quot; routerLink&#x3D;&quot;/schedule&quot;&gt;Schedule&lt;/a&gt;&lt;/h2&gt;
+                  &lt;!-- &lt;h2 class&#x3D;&quot;text-right&quot;&gt;&lt;i class&#x3D;&quot;fas fa-eye&quot;&gt;&lt;/i&gt;&lt;span&gt;&lt;/span&gt;&lt;/h2&gt; --&gt;
+                  &lt;!-- &lt;p class&#x3D;&quot;m-b-0&quot;&gt;Pending Dues&lt;span class&#x3D;&quot;f-right&quot;&gt;&lt;/span&gt;&lt;/p&gt; --&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+  
+    
+  
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;div class&#x3D;&quot;col s6&quot;&gt;
+            &lt;div style&#x3D;&quot;padding: 35px;&quot; align&#x3D;&quot;center&quot; class&#x3D;&quot;card&quot;&gt;
+              &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;left card-title&quot;&gt;
+                  &lt;b style&#x3D;&quot;font-size:x-large;&quot;&gt;View Teachers&lt;/b&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+  
+              &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;!-- &lt;a routerLink&#x3D;&quot;/addTeacher&quot;&gt;
+                  &lt;div style&#x3D;&quot;padding: 5px;&quot; class&#x3D;&quot;grey lighten-3 col s5 waves-effect&quot;&gt;
+                    &lt;i class&#x3D;&quot;indigo-text text-lighten-1 large material-icons w3-jumbo&quot;&gt;person&lt;/i&gt;
+                    &lt;span class&#x3D;&quot;indigo-text text-lighten-1&quot;&gt;
+                      &lt;h2&gt;Add Teacher&lt;/h2&gt;
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/a&gt; --&gt;
+  
+                &lt;a routerLink&#x3D;&quot;/listTeacher&quot;&gt;
+                  &lt;div style&#x3D;&quot;padding: 5px;&quot; class&#x3D;&quot;grey lighten-3 col s5 waves-effect&quot;&gt;
+                    &lt;i class&#x3D;&quot;indigo-text text-lighten-1 large material-icons w3-jumbo&quot;&gt;people&lt;/i&gt;
+                    &lt;span class&#x3D;&quot;indigo-text text-lighten-1&quot;&gt;
+                      &lt;h2&gt;View Teachers&lt;/h2&gt;
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+  
+          &lt;div class&#x3D;&quot;col s6&quot;&gt;
+            &lt;div style&#x3D;&quot;padding: 35px;&quot; align&#x3D;&quot;center&quot; class&#x3D;&quot;card&quot;&gt;
+              &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;left card-title&quot;&gt;
+                  &lt;b style&#x3D;&quot;font-size:x-large;&quot;&gt;View Students&lt;/b&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col&quot;&gt;
+                &lt;!-- &lt;a routerLink&#x3D;&quot;/addStudent&quot;&gt;
+                  &lt;div style&#x3D;&quot;padding: 5px;&quot; class&#x3D;&quot;grey lighten-3 col s5 waves-effect&quot;&gt;
+                    &lt;i class&#x3D;&quot;indigo-text text-lighten-1 large material-icons w3-jumbo&quot;&gt;person&lt;/i&gt;
+                    &lt;span class&#x3D;&quot;indigo-text text-lighten-1&quot;&gt;
+                      &lt;h2&gt;Add Student&lt;/h2&gt;
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/a&gt;
+   --&gt;
+                &lt;a routerLink&#x3D;&quot;/listStudent&quot;&gt;
+                  &lt;div style&#x3D;&quot;padding: 5px;&quot; class&#x3D;&quot;grey lighten-3 col s5 waves-effect&quot;&gt;
+                    &lt;i class&#x3D;&quot;indigo-text text-lighten-1 large material-icons w3-jumbo&quot;&gt;people&lt;/i&gt;
+                    &lt;span class&#x3D;&quot;indigo-text text-lighten-1&quot;&gt;
+                      &lt;h2&gt;View Students&lt;/h2&gt;
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+  
+      &lt;/div&gt;
+    &lt;/mat-sidenav-content&gt;
+  &lt;/mat-sidenav-container&gt;
+  
+  
+  &lt;!-- https://github.com/thisiszoaib/angular-responsive-sidebar/blob/master/src/app/app.component.ts --&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./student-dashboard.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">mat-toolbar {
+    background: #004a9f;
+    color: white;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.content {
+    height: calc(95vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+    padding: 16px;
+
+    overflow: auto;
+}
+
+mat-sidenav-container {
+    height: calc(90vh - 63px);
+    text-align: center;
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+
+}
+
+mat-icon {
+    margin-right: 8px;
+}
+
+.avatar {
+    margin-top: 16px;
+    /* width: 120px; */
+    height: 120px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+    font-size:larger;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+    font-size: large;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+/* /////////////////// */
+
+/* card styling */
+
+a:link {
+    text-decoration: none;
+  }
+
+  .order-card {
+    color: #fff;
+  }
+
+  .bg-c-blue {
+    background: linear-gradient(45deg, #4099ff, #73b4ff);
+  }
+
+  .bg-c-green {
+    background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+  }
+
+  .bg-c-yellow {
+    background: linear-gradient(45deg, #FFB64D, #ffcb80);
+  }
+
+  .bg-c-pink {
+    background: linear-gradient(45deg, #FF5370, #ff869a);
+  }
+
+
+  .card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card .card-block {
+    padding: 25px;
+  }
+
+  .order-card i {
+    font-size: 26px;
+  }
+
+  .f-left {
+    float: left;
+  }
+
+  .f-right {
+    float: right;
+  }
+
+  .abc h2 {
+    display: flex;
+  }
+
+
+
+/* /////////////// */
+
+
+/* main{
+  padding-left: 240px;
+}
+
+
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+}
+
+#credits li,
+#credits li a {
+  color: white;
+}
+
+#credits li a {
+  font-weight: bold;
+}
+
+
+.fab-tip {
+  position: fixed;
+  right: 85px;
+  padding: 0px 0.5rem;
+  text-align: right;
+  background-color: #323232;
+  border-radius: 2px;
+  color: #FFF;
+  width: auto;
+} */</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="mat-elevation-z8">  <button mat-icon-button *ngIf="sidenav.mode === \'over\'" (click)="sidenav.toggle()">    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>  </button>  STUDENT DASHBOARD</mat-toolbar>    <mat-sidenav-container>    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">      <div *ngIf="this.gender == \'Male\'">        <img  class="avatar mat-elevation-z8" src="../../../assets/images/student1.png"/>      </div>      <div *ngIf="this.gender == \'Female\'">        <img  class="avatar mat-elevation-z8" src="../../../assets/images/student2.png"/>      </div>      <p class="name">{{this.studentName}}</p>      <p class="designation">Student</p>        <mat-divider></mat-divider>        <button mat-button class="menu-button text-white" routerLink="/home">        <mat-icon>home</mat-icon>        <span>Home</span>      </button>      <button mat-button class="menu-button text-white" routerLink="/userProfile">        <mat-icon>person</mat-icon>        <span>Profile</span>      </button>      <mat-divider></mat-divider>      <button mat-button class="menu-button text-white" routerLink="/applyLeave">        <mat-icon><span class="material-symbols-outlined">          next_week          </span></mat-icon>        <span>Apply Leave</span>      </button>        <button mat-button class="menu-button text-white" routerLink="/msgTeacher">        <mat-icon>message</mat-icon>        <span>Send Message</span>      </button>      <button mat-button class="menu-button text-white" routerLink="/payFees">        <mat-icon>currency_rupee</mat-icon>        <span>Pay Fees</span>      </button>    </mat-sidenav>    <mat-sidenav-content>      <div class="content mat-elevation-z8">          <div class="container">          <div class="row">            <div class="col-md-4 col-xl-3">              <div class="card bg-c-green order-card">                <div class="card-block abc">                  <h2 class="m-b-20"><mat-icon style="margin-top: 5px;">message</mat-icon><a style="color: white;" routerLink="/myMsgs">My Messages</a></h2>                  <!-- <h2 class="text-right"><i class="fas fa-user-graduate f-left"></i><span>{{countStu}}</span></h2> -->                  <!-- <p class="m-b-0">Pending Students<span class="f-right">{{pendingstudentcount}}</span></p> -->                  <!-- <p class="m-b-0">Pending Teachers<span class="f-right"></span></p> -->                </div>              </div>            </div>              <div class="col-md-4 col-xl-3">              <div class="card bg-c-green order-card">                <div class="card-block abc">                  <h2 class="m-b-20"><mat-icon>next_week</mat-icon><a style="color: white;" routerLink="/myLeaves">My Leaves</a></h2>                  <!-- <h2 class="text-right"><i class="fas fa-user-graduate f-left"></i><span>{{countStu}}</span></h2> -->                  <!-- <p class="m-b-0">Pending Students<span class="f-right">{{pendingstudentcount}}</span></p> -->                  <!-- <p class="m-b-0">Pending Students<span class="f-right"></span></p> -->                </div>              </div>            </div>              <div class="col-md-4 col-xl-3">              <div class="card bg-c-yellow order-card">                <div class="card-block abc">                  <h2 class="m-b-20"><mat-icon style="margin-top: 4px;">currency_rupee</mat-icon><a style="color: white;" routerLink="/myFees">My Fees</a></h2>                  <!-- <h2 class="text-right"><i class="fas fa-search-dollar f-left"></i><span></span></h2> -->                  <!-- <p class="m-b-0">Pending Salary<span class="f-right"></span></p> -->                </div>              </div>            </div>              <div class="col-md-4 col-xl-3">              <div class="card bg-c-pink order-card">                <div class="card-block abc">                  <h2 class="m-b-20"><mat-icon style="margin-top: 4px;">event_note</mat-icon><a style="color: white;" routerLink="/schedule">Schedule</a></h2>                  <!-- <h2 class="text-right"><i class="fas fa-eye"></i><span></span></h2> -->                  <!-- <p class="m-b-0">Pending Dues<span class="f-right"></span></p> -->                </div>              </div>            </div>          </div>        </div>                <div class="row">          <div class="col s6">            <div style="padding: 35px;" align="center" class="card">              <div class="row">                <div class="left card-title">                  <b style="font-size:x-large;">View Teachers</b>                </div>              </div>                <div class="row">                <!-- <a routerLink="/addTeacher">                  <div style="padding: 5px;" class="grey lighten-3 col s5 waves-effect">                    <i class="indigo-text text-lighten-1 large material-icons w3-jumbo">person</i>                    <span class="indigo-text text-lighten-1">                      <h2>Add Teacher</h2>                    </span>                  </div>                </a> -->                  <a routerLink="/listTeacher">                  <div style="padding: 5px;" class="grey lighten-3 col s5 waves-effect">                    <i class="indigo-text text-lighten-1 large material-icons w3-jumbo">people</i>                    <span class="indigo-text text-lighten-1">                      <h2>View Teachers</h2>                    </span>                  </div>                </a>              </div>            </div>          </div>            <div class="col s6">            <div style="padding: 35px;" align="center" class="card">              <div class="row">                <div class="left card-title">                  <b style="font-size:x-large;">View Students</b>                </div>              </div>              <div class="col">                <!-- <a routerLink="/addStudent">                  <div style="padding: 5px;" class="grey lighten-3 col s5 waves-effect">                    <i class="indigo-text text-lighten-1 large material-icons w3-jumbo">person</i>                    <span class="indigo-text text-lighten-1">                      <h2>Add Student</h2>                    </span>                  </div>                </a>   -->                <a routerLink="/listStudent">                  <div style="padding: 5px;" class="grey lighten-3 col s5 waves-effect">                    <i class="indigo-text text-lighten-1 large material-icons w3-jumbo">people</i>                    <span class="indigo-text text-lighten-1">                      <h2>View Students</h2>                    </span>                  </div>                </a>              </div>            </div>          </div>        </div>        </div>    </mat-sidenav-content>  </mat-sidenav-container>      <!-- https://github.com/thisiszoaib/angular-responsive-sidebar/blob/master/src/app/app.component.ts --></div>'
+    var COMPONENTS = [{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddTeacherComponent', 'selector': 'app-add-teacher'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplyLeaveComponent', 'selector': 'app-apply-leave'},{'name': 'ClassScheduleComponent', 'selector': 'app-class-schedule'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListFeesComponent', 'selector': 'app-list-fees'},{'name': 'ListLeavesComponent', 'selector': 'app-list-leaves'},{'name': 'ListMsgsComponent', 'selector': 'app-list-msgs'},{'name': 'ListStudentComponent', 'selector': 'app-list-student'},{'name': 'ListTeacherComponent', 'selector': 'app-list-teacher'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageTeacherComponent', 'selector': 'app-message-teacher'},{'name': 'MyFeesComponent', 'selector': 'app-my-fees'},{'name': 'MyLeavesComponent', 'selector': 'app-my-leaves'},{'name': 'MyMsgsComponent', 'selector': 'app-my-msgs'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'PayFeesComponent', 'selector': 'app-pay-fees'},{'name': 'ReceivedMsgsComponent', 'selector': 'app-received-msgs'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'StudentDashboardComponent', 'selector': 'app-student-dashboard'},{'name': 'TeacherDashboardComponent', 'selector': 'app-teacher-dashboard'},{'name': 'UpdateStudentComponent', 'selector': 'app-update-student'},{'name': 'UpdateTeacherComponent', 'selector': 'app-update-teacher'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'ViewStudentComponent', 'selector': 'app-view-student'},{'name': 'ViewTeacherComponent', 'selector': 'app-view-teacher'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'StudentDashboardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'StudentDashboardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

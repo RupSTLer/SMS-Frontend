@@ -1,0 +1,6 @@
+{
+    "include": ["src/**/*.ts"]
+}
+
+// https://compodoc.app/
+// https://compodoc.app/guides/options.html

@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>school-management-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">school-management-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  FooterComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/footer/footer.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-footer</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./footer.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./footer.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-footer&#x27;,
+  templateUrl: &#x27;./footer.component.html&#x27;,
+  styleUrls: [&#x27;./footer.component.css&#x27;]
+})
+export class FooterComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-flex flex-column&quot;&gt;
+  &lt;footer class&#x3D;&quot;w-100 py-4 flex-shrink-0&quot;&gt;
+    &lt;div class&#x3D;&quot;container py-4&quot;&gt;
+      &lt;div class&#x3D;&quot;row gy-4 gx-5&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot;&gt;
+          &lt;h4 class&#x3D;&quot;h1 text-white&quot;&gt;School Management System&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;small text-muted&quot;&gt;This is a School Management System project using Springboot, Angular, MySQl&lt;/p&gt;
+          &lt;p class&#x3D;&quot;small text-muted mb-0&quot;&gt;&amp;copy; Copyrights. All rights reserved. &lt;a class&#x3D;&quot;text-primary&quot;
+              href&#x3D;&quot;#&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-lg-2 col-md-6&quot;&gt;
+          &lt;h5 class&#x3D;&quot;text-white mb-3&quot;&gt;Quick links&lt;/h5&gt;
+          &lt;ul class&#x3D;&quot;list-unstyled text-muted&quot;&gt;
+            &lt;li&gt;&lt;a routerLink&#x3D;&quot;/home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a routerLink&#x3D;&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a routerLink&#x3D;&quot;&quot;&gt;Get started&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a routerLink&#x3D;&quot;faq&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-lg-2 col-md-6&quot;&gt;
+          &lt;h5 class&#x3D;&quot;text-white mb-3&quot;&gt;Quick links&lt;/h5&gt;
+          &lt;ul class&#x3D;&quot;list-unstyled text-muted&quot;&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Get started&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot;&gt;
+          &lt;h4 class&#x3D;&quot;text-white mb-3&quot;&gt;Newsletter&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;small text-muted&quot;&gt;Subscribe our Newsletter&lt;/p&gt;
+          &lt;form action&#x3D;&quot;#&quot;&gt;
+            &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+              &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Type your email&quot;
+                aria-label&#x3D;&quot;email&quot; aria-describedby&#x3D;&quot;button-addon2&quot;&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary&quot; id&#x3D;&quot;button-addon2&quot; type&#x3D;&quot;button&quot;&gt;&lt;i
+                  class&#x3D;&quot;fas fa-paper-plane&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;!-- &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;footer class&#x3D;&quot;py-5&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-6 col-md-2 mb-3&quot;&gt;
+          &lt;h5&gt;Section&lt;/h5&gt;
+          &lt;ul class&#x3D;&quot;nav flex-column&quot;&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+  
+        &lt;div class&#x3D;&quot;col-6 col-md-2 mb-3&quot;&gt;
+          &lt;h5&gt;Section&lt;/h5&gt;
+          &lt;ul class&#x3D;&quot;nav flex-column&quot;&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a routerLink&#x3D;&quot;/home&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+  
+        &lt;div class&#x3D;&quot;col-6 col-md-2 mb-3&quot;&gt;
+          &lt;h5&gt;Section&lt;/h5&gt;
+          &lt;ul class&#x3D;&quot;nav flex-column&quot;&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li class&#x3D;&quot;nav-item mb-2&quot;&gt;&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link p-0 text-muted&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+  
+        &lt;div class&#x3D;&quot;col-md-5 offset-md-1 mb-3&quot;&gt;
+          &lt;form&gt;
+            &lt;h5&gt;Subscribe to our newsletter&lt;/h5&gt;
+            &lt;p&gt;Monthly digest of what&#x27;s new and exciting from us.&lt;/p&gt;
+            &lt;div class&#x3D;&quot;d-flex flex-column flex-sm-row w-100 gap-2&quot;&gt;
+              &lt;label for&#x3D;&quot;newsletter1&quot; class&#x3D;&quot;visually-hidden&quot;&gt;Email address&lt;/label&gt;
+              &lt;input id&#x3D;&quot;newsletter1&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Email address&quot;&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary&quot; type&#x3D;&quot;button&quot;&gt;Subscribe&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  
+      &lt;div class&#x3D;&quot;d-flex flex-column flex-sm-row justify-content-between py-1 my-1 border-top&quot;&gt;
+        &lt;p&gt;© 2023 Company, Inc. All rights reserved.&lt;/p&gt;
+        &lt;ul class&#x3D;&quot;list-unstyled d-flex&quot;&gt;
+          &lt;li class&#x3D;&quot;ms-3&quot;&gt;&lt;a class&#x3D;&quot;link-dark&quot; href&#x3D;&quot;#&quot;&gt;&lt;svg class&#x3D;&quot;bi&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot;&gt;&lt;use xlink:href&#x3D;&quot;#twitter&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li class&#x3D;&quot;ms-3&quot;&gt;&lt;a class&#x3D;&quot;link-dark&quot; href&#x3D;&quot;#&quot;&gt;&lt;svg class&#x3D;&quot;bi&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot;&gt;&lt;use xlink:href&#x3D;&quot;#instagram&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li class&#x3D;&quot;ms-3&quot;&gt;&lt;a class&#x3D;&quot;link-dark&quot; href&#x3D;&quot;#&quot;&gt;&lt;svg class&#x3D;&quot;bi&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot;&gt;&lt;use xlink:href&#x3D;&quot;#facebook&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
+  
+  
+  
+  
+
+
+  &lt;div class&#x3D;&quot;d-flex flex-column h-100&quot;&gt;
+
+   
+    &lt;section class&#x3D;&quot;hero text-white py-5 flex-grow-1&quot;&gt;
+        &lt;div class&#x3D;&quot;container py-4&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-lg-6&quot;&gt;
+                    &lt;h1 class&#x3D;&quot;display-4&quot;&gt;Bootstrap footer bottom&lt;/h1&gt;
+                    &lt;p class&#x3D;&quot;fst-italic text-muted&quot;&gt;Using Bootstrap 5 flexbox utilities, create a footer that always sticks to the bottom of your viewport. Snippet by &lt;a class&#x3D;&quot;text-primary&quot; href&#x3D;&quot;https://bootstrapious.com/&quot; target&#x3D;&quot;_blank&quot;&gt;Bootstrapious&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+  --&gt;
+
+&lt;!-- FOOTER --&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./footer.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">body {
+  background: #2a2e32;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.form-control {
+  background: #212529;
+  border-color: #545454;
+}
+
+.form-control:focus {
+  background: #212529;
+}
+
+footer {
+  background: #212529;
+  position: absolute;
+
+}
+
+
+body,
+html {
+  height: 100px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="d-flex flex-column">  <footer class="w-100 py-4 flex-shrink-0">    <div class="container py-4">      <div class="row gy-4 gx-5">        <div class="col-lg-4 col-md-6">          <h4 class="h1 text-white">School Management System</h4>          <p class="small text-muted">This is a School Management System project using Springboot, Angular, MySQl</p>          <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary"              href="#"></a></p>        </div>        <div class="col-lg-2 col-md-6">          <h5 class="text-white mb-3">Quick links</h5>          <ul class="list-unstyled text-muted">            <li><a routerLink="/home">Home</a></li>            <li><a routerLink="/about">About</a></li>            <li><a routerLink="">Get started</a></li>            <li><a routerLink="faq">FAQ</a></li>          </ul>        </div>        <div class="col-lg-2 col-md-6">          <h5 class="text-white mb-3">Quick links</h5>          <ul class="list-unstyled text-muted">            <li><a href="#">Home</a></li>            <li><a href="#">About</a></li>            <li><a href="#">Get started</a></li>            <li><a href="#">FAQ</a></li>          </ul>        </div>        <div class="col-lg-4 col-md-6">          <h4 class="text-white mb-3">Newsletter</h4>          <p class="small text-muted">Subscribe our Newsletter</p>          <form action="#">            <div class="input-group mb-3">              <input class="form-control" type="text" placeholder="Type your email"                aria-label="email" aria-describedby="button-addon2">              <button class="btn btn-primary" id="button-addon2" type="button"><i                  class="fas fa-paper-plane"></i></button>            </div>          </form>        </div>      </div>    </div>  </footer></div><!-- <div class="container">    <footer class="py-5">      <div class="row">        <div class="col-6 col-md-2 mb-3">          <h5>Section</h5>          <ul class="nav flex-column">            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>          </ul>        </div>          <div class="col-6 col-md-2 mb-3">          <h5>Section</h5>          <ul class="nav flex-column">            <li class="nav-item mb-2"><a routerLink="/home" class="nav-link p-0 text-muted">Home</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>          </ul>        </div>          <div class="col-6 col-md-2 mb-3">          <h5>Section</h5>          <ul class="nav flex-column">            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>          </ul>        </div>          <div class="col-md-5 offset-md-1 mb-3">          <form>            <h5>Subscribe to our newsletter</h5>            <p>Monthly digest of what\'s new and exciting from us.</p>            <div class="d-flex flex-column flex-sm-row w-100 gap-2">              <label for="newsletter1" class="visually-hidden">Email address</label>              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">              <button class="btn btn-primary" type="button">Subscribe</button>            </div>          </form>        </div>      </div>        <div class="d-flex flex-column flex-sm-row justify-content-between py-1 my-1 border-top">        <p>© 2023 Company, Inc. All rights reserved.</p>        <ul class="list-unstyled d-flex">          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>        </ul>      </div>    </footer>  </div>          <div class="d-flex flex-column h-100">       <section class="hero text-white py-5 flex-grow-1">        <div class="container py-4">            <div class="row">                <div class="col-lg-6">                    <h1 class="display-4">Bootstrap footer bottom</h1>                    <p class="fst-italic text-muted">Using Bootstrap 5 flexbox utilities, create a footer that always sticks to the bottom of your viewport. Snippet by <a class="text-primary" href="https://bootstrapious.com/" target="_blank">Bootstrapious</a></p>                </div>            </div>        </div>    </section>  --><!-- FOOTER --></div>'
+    var COMPONENTS = [{'name': 'AddStudentComponent', 'selector': 'app-add-student'},{'name': 'AddTeacherComponent', 'selector': 'app-add-teacher'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ApplyLeaveComponent', 'selector': 'app-apply-leave'},{'name': 'ClassScheduleComponent', 'selector': 'app-class-schedule'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListFeesComponent', 'selector': 'app-list-fees'},{'name': 'ListLeavesComponent', 'selector': 'app-list-leaves'},{'name': 'ListMsgsComponent', 'selector': 'app-list-msgs'},{'name': 'ListStudentComponent', 'selector': 'app-list-student'},{'name': 'ListTeacherComponent', 'selector': 'app-list-teacher'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessageTeacherComponent', 'selector': 'app-message-teacher'},{'name': 'MyFeesComponent', 'selector': 'app-my-fees'},{'name': 'MyLeavesComponent', 'selector': 'app-my-leaves'},{'name': 'MyMsgsComponent', 'selector': 'app-my-msgs'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'PayFeesComponent', 'selector': 'app-pay-fees'},{'name': 'ReceivedMsgsComponent', 'selector': 'app-received-msgs'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'StudentDashboardComponent', 'selector': 'app-student-dashboard'},{'name': 'TeacherDashboardComponent', 'selector': 'app-teacher-dashboard'},{'name': 'UpdateStudentComponent', 'selector': 'app-update-student'},{'name': 'UpdateTeacherComponent', 'selector': 'app-update-teacher'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'ViewStudentComponent', 'selector': 'app-view-student'},{'name': 'ViewTeacherComponent', 'selector': 'app-view-teacher'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

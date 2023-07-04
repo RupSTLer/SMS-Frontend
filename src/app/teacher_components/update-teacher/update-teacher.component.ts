@@ -29,6 +29,7 @@ export class UpdateTeacherComponent implements OnInit {
     });
     this.teacherService.getTeacherByTeacherId(this.teacherId).subscribe(data => {
       this.teacher = <Teacher>data;
+      console.log(this.teacher);
     })
   }
 
@@ -37,7 +38,7 @@ export class UpdateTeacherComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z]).{5,}')]),
     name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+')]),
     teacherID: new FormControl('', [Validators.required, Validators.pattern('')]),
-    age: new FormControl('', [Validators.required, Validators.min(6), Validators.max(18)]),
+    age: new FormControl('', [Validators.required, Validators.min(25), Validators.max(40)]),
     birthDate: new FormControl('', [Validators.required, Validators.pattern('')]),
     gender: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9 .,-]+$')]),
@@ -89,21 +90,13 @@ export class UpdateTeacherComponent implements OnInit {
     if (ans) {
       this.teacherService.updateTeacher(this.teacherId, this.teacher).subscribe(data => {
         console.log(data);
-        if (data === "Username already exists") {
-          this.notify.showError(this.teacher.userName + " :username already exist");
-        }
-        else if (data === "Email already exists") {
-          this.notify.showError(this.teacher.email + " :email already exist");
-        }
-        else if (data === "PhoneNo already exists") {
-          this.notify.showError(this.teacher.phoneNo + " :phoneno already exist");
-        }
-        else if (data === "Invalid date. Date must be in between 2010 to 2020") {
-          this.notify.showError(this.teacher.birthDate + " :birthdate is invalid. Date must be in between 2010 to 2020");
-        }
-        else if (data === "Teacher details updated successfully") {
+        if (data === "Teacher details updated successfully") {
           this.notify.showSuccess(this.teacher.userName + " updated successfully");
           this.goToTeacherList();
+        }
+        else
+        {
+          this.notify.showError(data);
         }
 
       });

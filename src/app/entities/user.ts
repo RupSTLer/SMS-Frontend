@@ -12,4 +12,10 @@ export class User {
     classe: string;
     section: string;
     department: string;
+    role: Set<Role>;
+}
+
+export class Role {
+    roleName: string;
+    roleDescription: string;
 }

@@ -20,7 +20,7 @@ export class MyLeavesComponent implements OnInit {
   userDetails: UserDetails = new UserDetails();
   allDetails: User = new User();
 
-  displayedColumns: string[] = ['id', 'studentId', 'studentName', 'startDate', 'endDate', 'reason', 'time', 'status'];
+  displayedColumns: string[] = ['id', 'studentId', 'startDate', 'endDate', 'reason', 'time', 'status'];
   dataSource = new MatTableDataSource<Leave>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

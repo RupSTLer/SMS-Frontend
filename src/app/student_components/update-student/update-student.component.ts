@@ -21,7 +21,6 @@ export class UpdateStudentComponent implements OnInit {
     private studentService: StudentService,
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
     private notify: NotificationService) { }
 
 
@@ -96,23 +95,14 @@ export class UpdateStudentComponent implements OnInit {
     var ans = confirm("Are you sure to UPDATE the student details?");
     if (ans) {
       this.studentService.updateStudent(this.studentId, this.student).subscribe(data => {
-        if (data === "Username already exists") {
-          this.notify.showError(this.student.userName + " :username already exist");
-        }
-        else if (data === "Email already exists") {
-          this.notify.showError(this.student.email + " :email already exist");
-        }
-        else if (data === "PhoneNo already exists") {
-          this.notify.showError(this.student.phoneNo + " :phoneno already exist");
-        }
-        else if (data === "Invalid date. Date must be in between 2010 to 2020") {
-          this.notify.showError(this.student.birthDate + " :birthdate is invalid. Date must be in between 2010 to 2020");
-        }
-        else if (data === "Student details updated successfully") {
+        if (data === "Student details updated successfully") {
           this.notify.showSuccess(this.student.userName + " updated successfully");
           this.goToStudentList();
         }
-
+        else
+        {
+          this.notify.showError(data);
+        }
       });
     }
   }

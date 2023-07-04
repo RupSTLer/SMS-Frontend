@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "JWT_Role_Auth_UI": {
+    "School_Management_System": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jwt-role-auth-ui",
+            "outputPath": "dist/school-management-system",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "JWT_Role_Auth_UI:build:production"
+              "browserTarget": "School_Management_System:build:production"
             },
             "development": {
-              "browserTarget": "JWT_Role_Auth_UI:build:development"
+              "browserTarget": "School_Management_System:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "JWT_Role_Auth_UI:build"
+            "browserTarget": "School_Management_System:build"
           }
         }
 

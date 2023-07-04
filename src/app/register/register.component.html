@@ -1,7 +1,7 @@
 <body>
     <div class="container">
         <h2 class="form-title">REGISTER NEW USER</h2>
-        <!-- #registerForm="ngForm" (ngSubmit)="register(registerForm)" -->
+        <!-- <form #registerForm="ngForm" (ngSubmit)="register()"> -->
         <form [formGroup]="registerForm" (ngSubmit)="register()">
             <div class="main-user-info">
 
@@ -14,19 +14,27 @@
                 </div>
 
                 <div class="user-input-box">
-                    <label for="password">Password</label>
-                    <input [type]="hide ? 'password' : 'text'" name="password" id="password" class="form-control"
-                    ngModel placeholder="Enter password" formControlName="password">
+                    <label for="userPassword">Password</label>
+                    <input [type]="hide ? 'password' : 'text'" name="userPassword" id="userPassword" class="form-control"
+                    ngModel placeholder="Enter password" formControlName="userPassword">
                     <!-- <span class="eyeicon" (click)="viewPass()"><i class="fa"
                             [ngClass]="visible?'fas fa-eye':'fas fa-eye-slash'"></i></span> -->
                     <!-- <button class="eyeicon" mat-icon-button (click)="viewPass()"><mat-icon>{{visible ? 'visibility_off' : 'visibility'}}</mat-icon></button> -->
                     <!-- <button class="btnn" mat-icon-button matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" style="color: white; display: flex;">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button> -->
-                    <label *ngIf="password && password.touched && password.invalid"
+                    </button> -->
+                    <label *ngIf="userPassword && userPassword.touched && userPassword.invalid"
                         style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid password</label>
                 </div>
+
+                <!-- <div class="user-input-box">
+                    <label for="userID">userID</label>
+                    <input type="text" id="userID" name="userID" class="form-control" ngModel
+                        placeholder="Enter userID" formControlName="userID">
+                    <label *ngIf="userID && userID.touched && userID.invalid"
+                        style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid userID</label>
+                </div> -->
 
                 <div class="user-input-box">
                     <label for="name">Full Name</label>
@@ -63,7 +71,6 @@
                     </select>
                     <label *ngIf="gender && gender.touched && gender.invalid"
                         style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid gender</label>
-
                 </div>
 
                 <div class="user-input-box">
@@ -72,7 +79,6 @@
                         placeholder="Enter address" formControlName="address">
                     <label *ngIf="address && address.touched && address.invalid"
                         style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid address</label>
-
                 </div>
 
                 <div class="user-input-box">
@@ -90,10 +96,18 @@
                         placeholder="Enter email" formControlName="email">
                     <label *ngIf="email && email.touched && email.invalid"
                         style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid email</label>
-
                 </div>
 
                 <div class="user-input-box">
+                    <label for="role">Register as</label>
+                    <select id="role" class="form-control" name="role" formControlName="role" ngModel required>
+                        <option value="Admin">Admin</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Student">Student</option>
+                    </select>
+                </div>
+
+                <div *ngIf="registerForm.get('role')?.value === 'Student'" class="user-input-box">
                     <label for="classe">Class</label>
                     <input type="text" name="classe" id="classe" class="form-control" ngModel
                         placeholder="Enter class" formControlName="classe">
@@ -102,7 +116,7 @@
 
                 </div>
 
-                <div class="user-input-box">
+                <div *ngIf="registerForm.get('role')?.value === 'Student'" class="user-input-box">
                     <label for="section">Section</label>
                     <input type="text" name="section" id="section" class="form-control" ngModel
                         placeholder="Enter section" formControlName="section">
@@ -110,17 +124,18 @@
                         style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid section</label>
                 </div>
 
-                <div class="user-input-box">
+                <div *ngIf="registerForm.get('role')?.value === 'Teacher' || registerForm.get('role')?.value === 'Admin' "class="user-input-box">
                     <label for="department">Department</label>
                     <input type="text" name="department" id="department" class="form-control" ngModel
                         placeholder="Enter department" formControlName="department">
                     <label *ngIf="department && department.touched && department.invalid"
                         style="color: #FF0000; text-shadow: 2px 2px 8px #FF0000;">Please add valid department</label>
                 </div>
+
             </div>
 
             <div class="form-submit-btn">
-                <input type="submit" value="Register" mat-raised-button color="primary" [disabled]="registerForm.invalid">
+                <input type="submit" value="Register" mat-raised-button color="primary">
             </div>
 
         </form>

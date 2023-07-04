@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
 import { UserDetails } from '../entities/userDetails';
@@ -6,6 +6,7 @@ import { Observable, Subject } from 'rxjs';
 import { User } from '../entities/user';
 import { TimerService } from './timer.service';
 import { Router } from '@angular/router';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class UserService {
   //it will contain API endpoints for user service of backend
 
   baseURL = "http://localhost:9001";
-  private logoutSubject: Subject<void> = new Subject<void>();
+  // private logoutSubject: Subject<void> = new Subject<void>();
 
   //this implies that this particular authenticate path/endpoint don't require any authentication 
   requestHeader = new HttpHeaders({ "No-Auth": "True"});
@@ -28,27 +29,34 @@ export class UserService {
       //   this.logout();
       // })
      }
-
-
-  public register(registerData: any)
+  
+  public register(user: User, role: string)
   {
-    return this.http.post(this.baseURL + '/registerNewUser', registerData);
+    // const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const params = new HttpParams().set('role', role);
+    return this.http.post(this.baseURL + '/registerNewUser', user, {params, responseType: 'text'});
+  }
+
+  updateUserDetails(userID: string, user: User)
+  {
+    // return this.http.put(this.baseURL +'/updateUserDetails/${userId}', user, {responseType: 'text'});
+    return this.http.put(`${this.baseURL}/updateUserDetails/${userID}`, user, {responseType: 'text'});
   }
 
   public login(loginData: any) {
     return this.http.post(this.baseURL + '/authenticate', loginData, {headers: this.requestHeader});
     // this.timerService.resetTimer();
   }
-
+  
   logout(): void {
     this.userAuthService.clear();
     this.router.navigate(['/login']);   //after logging out, it will redirect to login page
-    this.logoutSubject.next();
+    // this.logoutSubject.next();
   }
 
-  onLogout(): Observable<void> {
-    return this.logoutSubject.asObservable();
-  }
+  // onLogout(): Observable<void> {
+  //   return this.logoutSubject.asObservable();
+  // }
 
   public forUser()
   {
@@ -72,6 +80,10 @@ export class UserService {
   getAllDetailsByUserName(username: string): Observable<User>
   {
     return this.http.get<User>(`${this.baseURL}/getAllDetailsByUserName/${username}`);
+  }
+
+  getUserByUserID(userID: string): Observable<User> {
+    return this.http.get<User>(`${this.baseURL}/${userID}`);
   }
 
 

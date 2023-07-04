@@ -1,0 +1,35 @@
+.container {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.profile {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-img {
+    margin-right: 20px;
+    filter: drop-shadow(0 0 10px #121212);
+}
+
+.resize-img {
+    width: 225px;
+    height: 225px;  
+    border-radius: 5%;
+}
+
+.profile-details {
+    text-align: left;
+    margin-right: 50px;
+}
+
+.btn {
+    margin-bottom: px;
+}

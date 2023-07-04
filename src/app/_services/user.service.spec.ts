@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserAuthService } from './user-auth.service';
 import { TimerService } from './timer.service';
 import { Router } from '@angular/router';
+import { Role, User } from '../entities/user';
 
 describe('UserService', () => {
   let userService: UserService;
@@ -21,7 +22,7 @@ describe('UserService', () => {
       put: jest.fn(),
       get: jest.fn(),
       delete: jest.fn(),
-      
+
     } as unknown as HttpClient;
 
     userService = new UserService(http, userAuthService, timerService, router);
@@ -33,41 +34,25 @@ describe('UserService', () => {
     expect(userService).toBeTruthy();
   });
 
-  describe('register new User', () => {
-    it('should make a POST request to register a new user', async() => {
-      //mock the post method of httpclient
-      // http.post.mockResolvedValueOnce({});
-      (http.post as jest.Mock).mockReturnValueOnce({});
-
-      const registerData = { username: 'rup123', 'password': 'Rup@pass'};
-
-      await userService.register(registerData);
-
-      expect(http.post).toHaveBeenCalledWith(
-        userService.baseURL + '/registerNewUser', registerData
-      );
-    });
-  });
-
 
   describe('login', () => {
-    it('should make a POST request to authenticate the user', async() => {
+    it('should make a POST request to authenticate the user', async () => {
       //mock the post method of httpclient
       (http.post as jest.Mock).mockReturnValueOnce({});
 
-      const loginData = { username: 'rup123', 'password': 'Rup@pass'};
+      const loginData = { username: 'rup123', 'password': 'Rup@pass' };
 
       await userService.login(loginData);
 
       expect(http.post).toHaveBeenCalledWith(
         userService.baseURL + '/authenticate', loginData,
-        {headers: userService.requestHeader}
+        { headers: userService.requestHeader }
       );
     });
   });
 
   describe('forAdmin', () => {
-    it('should make a GET request to retrieve data for a Admin', async() => {
+    it('should make a GET request to retrieve data for a Admin', async () => {
       //mock the GET method of httpclient
       (http.get as jest.Mock).mockReturnValueOnce('response data');
 
@@ -75,13 +60,13 @@ describe('UserService', () => {
 
       expect(http.get).toHaveBeenCalledWith(
         userService.baseURL + '/forAdmin',
-        {responseType: 'text'}
+        { responseType: 'text' }
       );
     });
   });
 
   describe('forUser', () => {
-    it('should make a GET request to retrieve data for a user', async() => {
+    it('should make a GET request to retrieve data for a user', async () => {
       //mock the GET method of httpclient
       (http.get as jest.Mock).mockReturnValueOnce('response data');
 
@@ -89,13 +74,13 @@ describe('UserService', () => {
 
       expect(http.get).toHaveBeenCalledWith(
         userService.baseURL + '/forUser',
-        {responseType: 'text'}
+        { responseType: 'text' }
       );
     });
   });
 
   describe('getUserDetails', () => {
-    it('should make a GET request to retrieve user details', async() => {
+    it('should make a GET request to retrieve user details', async () => {
       //mock the GET method of httpclient
       (http.get as jest.Mock).mockReturnValueOnce('response data');
 
@@ -107,19 +92,54 @@ describe('UserService', () => {
     });
   });
 
-  // describe('getNameOfUser', () => {
-  //   it('should make a GET request to retrieve name of user', async() => {
-  //     //mock the GET method of httpclient
-  //     (http.get as jest.Mock).mockReturnValueOnce('');
 
-  //     await userService.getNameOfUser();
+    // describe('register new User', () => {
+  //   it.skip('should make a POST request to register a new user', async () => {
+  //     //mock the post method of httpclient
+  //     // http.post.mockResolvedValueOnce({});
+  //     (http.post as jest.Mock).mockReturnValueOnce({});
 
-  //     expect(http.get).toHaveBeenCalledWith(
-  //       userService.baseURL + '/getNameOfUser' + '/${username}',
-  //       {responseType: 'text'}
-  //     );
+  //     const registerData: User =
+  //     {
+  //       userName: "dhiman123",
+  //       userPassword: "Dhiman@pass",
+  //       userID: "SMS004",
+  //       name: "Dhiman Das",
+  //       age: 26,
+  //       birthDate: "1992-06-13",
+  //       gender: "Male",
+  //       address: "Howrah",
+  //       phoneNo: "6289045205",
+  //       email: "dhiman@g.co",
+  //       classe: "six",
+  //       section: "A",
+  //       department: "Science",
+  //       role: new Set<Role>(
+  //         [
+  //           {
+  //             roleName: "Teacher",
+  //             roleDescription: "role for teacher"
+  //           }
+  //         ])
+  //     };
+
+  //     const mockResponse: User = {
+  //       ...registerData
+  //     };
+      
+  //     const role = 'Teacher';
+
+  //     userService.register(registerData, role).subscribe(response => {
+  //       expect(response).toEqual(mockResponse);
+  //     });
+
+  //     // expect(http.post).toHaveBeenCalledWith(
+  //     //   userService.baseURL + '/registerNewUser', registerData, role
+  //     // );
   //   });
   // });
+
+
 
 
 

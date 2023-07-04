@@ -37,10 +37,8 @@
         {{leave.reason.length}}/{{maxChars}}</label>
     </div>
     <br>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="leaveForm.invalid">Submit</button>
     <br>
   </form>
 </div>
 
-
-<!--    [disabled]="leaveForm.invalid"-->

@@ -43,18 +43,11 @@ describe('PayFeesComponent', () => {
       id: 3,
       studentId: "SMS001",
       studentName: "Rupam",
-      amount: 7890,
       feeType: "Monthly",
-      paymentType: "Cash",
+      amount: 7890,
+      duration: "June",
       time: "01-05-2023 18:55"
     }
-    // component.fee.id = 3;
-    // component.fee.studentId = "SMS001";
-    // component.fee.studentName = "Rupam";
-    // component.fee.amount = 7890;
-    // component.fee.feeType = "Monthly";
-    // component.fee.paymentType = "Cash";
-    // component.fee.time = "01-05-2023 18:55";
 
     //trigger the function call
     const mockService = feeService.payFees(mockFeeData);

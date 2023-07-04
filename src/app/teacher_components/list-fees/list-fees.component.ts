@@ -15,7 +15,7 @@ export class ListFeesComponent implements OnInit {
 
   fees: Fee[]=[];
 
-  displayedColumns: string[] = ['id', 'studentId', 'studentName', 'feeType', 'amount', 'paymentType', 'time'];
+  displayedColumns: string[] = ['id', 'studentId', 'feeType', 'duration', 'amount', 'time'];
   dataSource = new MatTableDataSource<Fee>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

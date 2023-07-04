@@ -26,16 +26,16 @@ export class AppComponent implements OnDestroy {
     private userAuthService: UserAuthService,
     private userService: UserService) 
     {
-      this.logoutSubscription = this.userService.onLogout().subscribe(() => {
-        alert('logging off soon');
-        this.userAuthService.clear();
-        this.router.navigate(['/login']);
-        console.log('user logged out due to inactivity');
-      });
+      // this.logoutSubscription = this.userService.onLogout().subscribe(() => {
+      //   alert('logging off soon');
+      //   this.userAuthService.clear();
+      //   this.router.navigate(['/login']);
+      //   console.log('user logged out due to inactivity');
+      // });
      }
 
   ngOnDestroy(): void {
-    this.logoutSubscription.unsubscribe();
+    // this.logoutSubscription.unsubscribe();
   }
 
  

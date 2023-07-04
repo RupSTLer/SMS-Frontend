@@ -33,9 +33,9 @@ describe('FeeService', () => {
         id: 13,
         studentId: "SMS003",
         studentName:"Rupam Roy",
-        amount: 3333,
         feeType:"Monthly",
-        paymentType:"Cash",
+        amount: 3333,
+        duration: "June",
         time: "30-05-2023 20:29",
       };
 
@@ -57,9 +57,9 @@ describe('FeeService', () => {
         id: 4,
         studentId: "SMS003",
         studentName:"Rupam Roy",
-        amount: 3333,
         feeType:"Monthly",
-        paymentType:"Cash",
+        amount: 3333,
+        duration: "June",
         time: "30-05-2023 20:29",
       };
 
@@ -79,19 +79,18 @@ describe('FeeService', () => {
         id: 3,
         studentId: "SMS003",
         studentName:"Rupam Roy",
-        amount: 3333,
         feeType:"Monthly",
-        paymentType:"Cash",
+        amount: 3333,
+        duration: "June",
         time: "30-05-2023 20:29",
       },
       {
-        id: 4,
-        studentId: "SMS004",
-        studentName:"Ritam Roy",
-        amount: 6666,
-        feeType:"Quaterly",
-        paymentType:"Card",
-        time: "31-05-2023 20:29",
+        studentId: "SMS003",
+        studentName:"Rupam Roy",
+        feeType:"Monthly",
+        amount: 3333,
+        duration: "May",
+        time: "30-05-2023 20:29",
       }];
 
       (http.get as jest.Mock).mockReturnValueOnce(of(feeListMockData));
@@ -109,12 +108,12 @@ describe('FeeService', () => {
       const stuId = "SMS004";
       const getFeesData = {
         id: 4,
-        studentId: stuId,
-        studentName:"Ritam Roy",
-        amount: 6666,
-        feeType:"Quaterly",
-        paymentType:"Card",
-        time: "31-05-2023 20:29",
+        studentId: "SMS003",
+        studentName:"Rupam Roy",
+        feeType:"Monthly",
+        amount: 3333,
+        duration: "June",
+        time: "30-05-2023 20:29",
       };
 
       (http.get as jest.Mock).mockReturnValueOnce(Promise.resolve(getFeesData));
